@@ -46,6 +46,24 @@ h1 {
             border-radius: 8px; /* coins arrondis pour les images */
         }
 
+/* LISTE */
+
+.centered-list {
+    text-align: center;
+}
+
+/* Supprime les puces de la liste pour un style plus épuré */
+.centered-list ul {
+    list-style-type: none; /* Enlève les puces */
+    padding: 0;            /* Retire le padding par défaut */
+}
+
+/* Centre les éléments de la liste pour une disposition horizontale */
+.centered-list li {
+    display: inline-block;
+    margin: 0 10px; /* Espace entre les éléments */
+}
+
 /* BARRE DE NAVIGATION */
 
 .nav {
