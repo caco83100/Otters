@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+        <link rel="stylesheet" href="enclos.css">
+
+        <!-- Lien vers le CSS de Swiper -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      
+        <!-- Lien vers le script JS de Swiper -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      
+    <title>Le Plateau</title>
+</head>
+
+<body>
+    <div class="enclos-container">
+      <h2> Le Plateau</h2>
+      
+      <!-- Swiper container principal -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/14112020-serval-scaled.jpg" alt="Le Serval" />
+            <p>Le Serval</p>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/ane-de-Somalie-09022020-scaled.jpg" alt="Les Ânes de Somalie" />
+            <p>Les Ânes de Somalie</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/chien_des_buissons_fiche.jpg" alt="Les Chiens des Buissons" />
+            <p>Les Chiens des Buissons</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/cigogne-07022020-10-1-scaled.jpg" alt="Les Cigognes" />
+            <p>Les Cigognes</p>
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/dromadaire-09202020-2-1-scaled.jpg" alt="Les Dromadaires" />
+            <p>Les Dromadaires</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/emeu-10062020-2-1-scaled.jpg" alt="L'Emeu" />
+            <p>L'Emeu</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/flamant_fiche.jpg" alt="Le Flamant Rose" />
+            <p>Le Flamant Rose</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/ibis-rouge-bandeau.jpg" alt="Les Ibis Rouges" />
+            <p>Les Guepards</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/lynx-04102020-5-1-scaled.jpg" alt="Le Lynx" />
+            <p>Le Lynx</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/marabout-07082020-5-scaled.jpg" alt="Les Marabouts" />
+            <p>Les Marabouts</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/Moutons-Karakul-19012021-5-1-scaled.jpg" alt="Les Moutons Karakul" />
+            <p>Les Moutons Karakul</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/nandou-28022022-1-scaled.jpg" alt="Le Nandou" />
+            <p>Le Nandou</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/pecari-10062020-5-1-scaled.jpg" alt="Les Pécaris" />
+            <p>Les Pécaris</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/porc-epic-09022020-3-1-scaled.jpg" alt="Le Porc-Epic" />
+            <p>Le Porc-Epic</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/portfolio_tigre_2.jpg" alt="Les Tigres" />
+            <p>Les Tigres</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/tamanoir-16042020-6-1-scaled.jpg" alt="Les Tamanoirs" />
+            <p>Les Tamanoirs</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/tortue-de-Floride-fiche.jpg" alt="La Tortue de Floride" />
+            <p>La Tortue de Floride</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/wallaby-01052020-1-scaled.jpg" alt="Le Wallaby" />
+            <p>Le Wallaby</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/watusi-20032021-6-1-scaled.jpg" alt="Le Watusi" />
+            <p>Le Watusi</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Les Clairières/Yack-fiche.jpg" alt="Les Yacks" />
+            <p>Les Yacks</p>
+          </div>
+
+        </div>
+  
+        <!-- Pagination et navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  
+    <!-- Script pour initialiser Swiper -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.mySwiper', {
+          // Activer la boucle
+          loop: true,
+  
+          // Paramètres de navigation
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+  
+          // Pagination
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+  
+          // Lecture automatique
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+        });
+      });
+    </script>
+    <div class="comment-section">
+        <h2>Commentaires</h2>
+        <form id="commentForm">
+            <label for="comment">Votre commentaire :</label>
+            <textarea id="comment" class="comment-box" rows="4" placeholder="Écrivez votre commentaire ici..."></textarea><br>
+            <button type="button" class="submit-btn" onclick="addComment()">Soumettre</button>
+        </form>
+    
+        <div id="commentDisplay" class="comment-display">
+            <!-- Les commentaires ajoutés apparaîtront ici -->
+        </div>
+    </div>
+    
+    <script>
+        // Fonction JavaScript pour ajouter un commentaire
+        function addComment() {
+            const commentBox = document.getElementById('comment');
+            const commentDisplay = document.getElementById('commentDisplay');
+    
+            if (commentBox.value.trim() !== "") {
+                const newComment = document.createElement('p');
+                newComment.textContent = commentBox.value;
+                commentDisplay.appendChild(newComment);
+                commentBox.value = "";  // Réinitialiser le champ de texte
+            } else {
+                alert("Veuillez écrire un commentaire avant de soumettre.");
+            }
+        }
+    </script>
+  </body>
+</html>

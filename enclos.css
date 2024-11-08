@@ -1,0 +1,41 @@
+.enclos-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .swiper-slide p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  .comment-section {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.comment-box {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comment-display {
+    margin-top: 20px;
+}  

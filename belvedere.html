@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+        <link rel="stylesheet" href="enclos.css">
+
+        <!-- Lien vers le CSS de Swiper -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      
+        <!-- Lien vers le script JS de Swiper -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      
+    <title>Le Belvédère</title>
+</head>
+
+<body>
+    <div class="enclos-container">
+      <h2> Le Belvédère</h2>
+      
+      <!-- Swiper container principal -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/14112020-rhinoceros-4-1-scaled.jpg" alt="Les Rhinocéros" />
+            <p>Les Rhinocéros</p>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/Autruche-fiche.jpg" alt="Les Autruches" />
+            <p>Les Autruches</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/casoar-a-casque-02052020-2-scaled.jpg" alt="Les Casoars" />
+            <p>Les Casoars</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/coati-27022021-1-scaled.jpg" alt="Les coatis" />
+            <p>Les Coatis</p>
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/Crocodile-nain-fiche-2.jpg" alt="Le Crocodile Nain" />
+            <p>Les Macaques Crabier</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/fennec-20052020-9-scaled.jpg" alt="Les Fennecs" />
+            <p>Les Fennecs</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/gnou-19012021-1-scaled.jpg" alt="Les Gnous" />
+            <p>Les Gnous</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/guepard-18102020-2-scaled.jpg" alt="Les Guepards" />
+            <p>Les Guepards</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/oryx-algazelle.jpg" alt="L'Orix Algazelle" />
+            <p>L'Orix Algazelle</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/oryx-beisa-19012021-1-scaled.jpg" alt="L'Orix Beisa" />
+            <p>L'Orix Beisa</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/saimiris-fiche.jpg" alt="Les Saïmiris" />
+            <p>Les Saïmiris</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="animaux/Le Belvédère/suricate-10062020_-5-1-scaled.jpg" alt="Les Suricates" />
+            <p>Les Suricates</p>
+          </div>
+
+  
+        </div>
+  
+        <!-- Pagination et navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  
+    <!-- Script pour initialiser Swiper -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.mySwiper', {
+          // Activer la boucle
+          loop: true,
+  
+          // Paramètres de navigation
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+  
+          // Pagination
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+  
+          // Lecture automatique
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+        });
+      });
+    </script>
+    <div class="comment-section">
+        <h2>Commentaires</h2>
+        <form id="commentForm">
+            <label for="comment">Votre commentaire :</label>
+            <textarea id="comment" class="comment-box" rows="4" placeholder="Écrivez votre commentaire ici..."></textarea><br>
+            <button type="button" class="submit-btn" onclick="addComment()">Soumettre</button>
+        </form>
+    
+        <div id="commentDisplay" class="comment-display">
+            <!-- Les commentaires ajoutés apparaîtront ici -->
+        </div>
+    </div>
+    
+    <script>
+        // Fonction JavaScript pour ajouter un commentaire
+        function addComment() {
+            const commentBox = document.getElementById('comment');
+            const commentDisplay = document.getElementById('commentDisplay');
+    
+            if (commentBox.value.trim() !== "") {
+                const newComment = document.createElement('p');
+                newComment.textContent = commentBox.value;
+                commentDisplay.appendChild(newComment);
+                commentBox.value = "";  // Réinitialiser le champ de texte
+            } else {
+                alert("Veuillez écrire un commentaire avant de soumettre.");
+            }
+        }
+    </script>
+  </body>
+</html>
