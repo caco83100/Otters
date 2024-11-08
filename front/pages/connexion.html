@@ -15,7 +15,6 @@
                 <div class="enclos-contain">
                     <button class="enclos-button"><strong>NOS BIOMES</strong></button>
                     <div class="dropdown-enclos">
-                        <a href="présentation_biomes.html">Présentation</a>
                         <a href="bergerie.html">La Bergerie 
                             des reptiles</a>
                         <a href="vallon.html">Le Vallon des Cascades</a>
@@ -35,13 +34,13 @@
     </head>
     <body>
     <div class="wrapper">
-        <form action="">
+        <form action="../../back/connexion.php" method="post">
             <h1>CONNECTEZ-VOUS</h1>
             <div class="userandpswd">
-                <input type="text" placeholder="Nom d'utilisateur / Adresse e-mail" required>
+                <input type="text" placeholder="Nom d'utilisateur / Adresse e-mail" name="IDENTIFIANT" required>
             </div>
             <div class="userandpswd">
-                <input type="password" placeholder="Mot de passe" required>
+                <input type="password" placeholder="Mot de passe" name="MDP" required>
             </div>
 
             <div class="remember-forgot">
