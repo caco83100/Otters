@@ -13,6 +13,10 @@
   .swiper-slide p {
     font-size: 1.2em;
     margin-top: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color:white;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
   }
   .comment-section {
     width: 50%;
@@ -20,6 +24,11 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    backdrop-filter: blur(15px);
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    color:white;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 .comment-box {
     width: 100%;
