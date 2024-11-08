@@ -1,11 +1,8 @@
 .enclos-container {
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-  display: flex;          /* Utilisation du flexbox */
-  flex-direction: column; /* Empile les éléments en colonne */
-  align-items: center;    /* Centre les éléments horizontalement */
-}
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
   
   .swiper-slide img {
     width: 100%;
