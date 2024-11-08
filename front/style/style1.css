@@ -8,6 +8,7 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height:100vh;
     padding-top:80px;
     margin:0;
@@ -20,6 +21,12 @@ h1 {
     font-family: 'Poppins', sans-serif;
     color:white;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+/*PARAGRAPHE*/
+
+.centered-paragraph {
+    text-align: center;
 }
 
 /* DISPOSITIONS D'IMAGES */
@@ -44,6 +51,24 @@ h1 {
             height: auto;
             border-radius: 8px; /* coins arrondis pour les images */
         }
+
+/* LISTE */
+
+.centered-list {
+    text-align: center;
+}
+
+/* Supprime les puces de la liste pour un style plus épuré */
+.centered-list ul {
+    list-style-type: none; /* Enlève les puces */
+    padding: 0;            /* Retire le padding par défaut */
+}
+
+/* Centre les éléments de la liste pour une disposition horizontale */
+.centered-list li {
+    display: inline-block;
+    margin: 0 10px; /* Espace entre les éléments */
+}
 
 /* BARRE DE NAVIGATION */
 
