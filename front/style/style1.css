@@ -22,6 +22,29 @@ h1 {
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
+/* DISPOSITIONS D'IMAGES */
+
+.container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Grille pour les images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px; /* espace entre les images */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* coins arrondis pour les images */
+        }
+
 /* BARRE DE NAVIGATION */
 
 .nav {
