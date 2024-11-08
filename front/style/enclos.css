@@ -19,16 +19,18 @@
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
   }
   .comment-section {
-    width: 50%;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;  /* La section des commentaires prendra toute la largeur disponible */
+    max-width: 800px; /* Limite la largeur à 800px, ou vous pouvez ajuster cette valeur */
+    margin-top: 30px; /* Ajoute un espace entre le Swiper et la section de commentaires */
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     backdrop-filter: blur(15px);
     background: transparent;
     font-family: 'Poppins', sans-serif;
-    color:white;
+    color: white;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    box-sizing: border-box;
 }
 .comment-box {
     width: 100%;
