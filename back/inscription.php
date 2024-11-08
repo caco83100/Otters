@@ -6,6 +6,7 @@ $date=$_POST["DATE"];
 $pseudo=$_POST["PSEUDO"];
 $mail=$_POST["MAIL"];
 $mdp=$_POST["MDP"];
+$nl=$_POST["NL"];
 
 $server ="localhost";
 $username="root";
@@ -17,7 +18,7 @@ if($conn->connect_error){
     die("connection BDD échouée");
 }
 
-$req="INSERT INTO users (NOM, PRENOM, DATE, PSEUDO, MAIL, MDP) VALUES ('$nom', '$prenom', '$date', '$pseudo', '$mail', '$mdp')";
+$req="INSERT INTO users (NOM, PRENOM, DATE, PSEUDO, MAIL, MDP, NL) VALUES ('$nom', '$prenom', '$date', '$pseudo', '$mail', '$mdp', $nl)";
 $conn->query($req);
 
 $conn->close();
