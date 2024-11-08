@@ -25,7 +25,7 @@ h1 {
 /* DISPOSITIONS D'IMAGES */
 
 .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
@@ -34,7 +34,7 @@ h1 {
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px; /* espace entre les images */
+            gap: 15px; /* espace entre les images */
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -194,7 +194,7 @@ h1 {
 }
 
 .wrapper{
-    width:600px;
+    width:700px;
     background: transparent;
     border: 2px solid rgba(255,255,255,.2);
     backdrop-filter: blur(15px);
