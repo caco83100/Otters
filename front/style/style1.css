@@ -27,6 +27,7 @@ h1 {
 
 .centered-paragraph {
     text-align: center;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
 /* DISPOSITIONS D'IMAGES */
@@ -56,6 +57,7 @@ h1 {
 
 .centered-list {
     text-align: center;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
 /* Supprime les puces de la liste pour un style plus épuré */
