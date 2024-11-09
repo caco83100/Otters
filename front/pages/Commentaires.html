@@ -58,6 +58,12 @@
                 <label>Billet Enfant (3-12 ans) - 10€ :</label>
                 <input type="number" id="childQuantity" min="0" value="0">
             </div>
+
+            <div>
+                <label>Billet Etudiant (sous présentation de carte étudiante) - 15€ :</label>
+                <input type="number" id="studentQuantity" min="0" value="0">
+            </div>
+
             <div>
                 <label>Billet Senior - 15€ :</label>
                 <input type="number" id="seniorQuantity" min="0" value="0">
@@ -91,6 +97,7 @@
         const ticketPrices = {
             adult: 20,
             child: 10,
+            student: 15,
             senior: 15,
             family: 50,
             annualPass: 100,
@@ -105,6 +112,7 @@
             const quantities = {
                 adult: parseInt(document.getElementById('adultQuantity').value) || 0,
                 child: parseInt(document.getElementById('childQuantity').value) || 0,
+                student: parseInt(document.getElementById('studentQuantity').value) || 0,
                 senior: parseInt(document.getElementById('seniorQuantity').value) || 0,
                 family: parseInt(document.getElementById('familyQuantity').value) || 0,
                 annualPass: parseInt(document.getElementById('annualPassQuantity').value) || 0,
@@ -143,6 +151,7 @@
             switch(type) {
                 case 'adult': return 'Billet Adulte';
                 case 'child': return 'Billet Enfant';
+                case 'student': return 'Billet Etudiant';
                 case 'senior': return 'Billet Senior';
                 case 'family': return 'Pass Famille';
                 case 'annualPass': return 'Pass Annuel';
