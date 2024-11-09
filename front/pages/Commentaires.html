@@ -2,281 +2,179 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-        <link rel="stylesheet" href="enclos.css">
-        <link rel="stylesheet" href="comm.css">
+        <link rel="stylesheet" href="../../front/style/style1.css">
+        <link rel="stylesheet" href="../../front/style/enclos.css">
+        <link rel="stylesheet" href="../../front/style/comm.css">
+        <script src="../commentaires.js"></script>
 
         <!-- Lien vers le CSS de Swiper -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
       
         <!-- Lien vers le script JS de Swiper -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <div class="nav">
+            <a href="accueil_zoo.html">
+                <img src="../../assets/logos/logo_png.png">
+            </a>
+                <div class="enclos-contain">
+                    <button class="enclos-button"><strong>NOS BIOMES</strong></button>
+                    <div class="dropdown-enclos">
+                        <a href="présentation_biomes.html">Présentation</a>
+                        <a href="bergerie.html">La Bergerie des reptiles</a>
+                        <a href="vallon.html">Le Vallon des Cascades</a>
+                        <a href="belvedere.html">Le Belvédère</a>
+                        <a href="plateau.html">Le Plateau</a>
+                        <a href="bois.html">Le Bois des Pins</a>
+                        <a href="clairieres.html">Les Clairières</a>
+                    </div>
+                </div>
+            <a href="#about"><strong>NOS SERVICES</strong></a>
+            <a href="#contact"><strong>PRENEZ VOS BILLETS</strong></a>
+            <input type="text" placeholder="Recherche..">
+            <div>
+            <a href="connexion.html" class="btn"><strong>CONNEXION</strong></a>
+            </div>
+        </div>
 
       
-    <title>Le Vallon des Cascades</title>
+    <title>Billeterie</title>
 </head>
 
 <body>
-    <div class="enclos-container">
-      <h2> Le Vallon des Cascades</h2>
-      
-      <!-- Swiper container principal -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/loutre.jpg" alt="Les loutres" />
-            <p>Les Loutres</p>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/ara.jpg" alt="Les Aras" />
-            <p>Les Aras</p>
-          </div>
+    <div class="wrapper">
+        <h1>Billetterie</h1>
 
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/binturong.jpg" alt="Les Binturong" />
-            <p>Les Binturong</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/chevre.jpg" alt="Les Chèvres" />
-            <p>Les Chèvres</p>
-          </div>
-          
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/mouflon.jpg" alt="Les Mouflons" />
-            <p>Les Mouflons</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/panda-roux.jpg" alt="Les Pandas-Roux" />
-            <p>Les Pandas-Roux</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/panthere.jpg" alt="Les Panthères" />
-            <p>Les Panthères</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="animaux/Le Vallon des cascades/tortue.jpg" alt="Les Tortues" />
-            <p>Les Tortues</p>
-          </div>
-  
-        </div>
-  
-        <!-- Pagination et navigation -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </div>
-  
-    <!-- Script pour initialiser Swiper -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const swiper = new Swiper('.mySwiper', {
-          // Activer la boucle
-          loop: true,
-  
-          // Paramètres de navigation
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-  
-          // Pagination
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-  
-          // Lecture automatique
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
-        });
-      });
-    </script>
-
-
-    <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="enclos.css">
-    <!-- Lien vers le CSS de Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <title>Le Vallon des Cascades</title>
-    <style>
-        /* Style pour les encadrés de commentaires */
-        .comment-section {
-            width: 60%;
-            margin: 20px auto;
-        }
-        .comment-form {
-            margin-bottom: 20px;
-        }
-        .comment-box {
-            width: 100%;
-            padding: 10px;
-            resize: vertical;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .stars {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        .star {
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .star.selected {
-            color: gold;
-        }
-        .comment {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        .comment p {
-            margin: 5px 0;
-        }
-        .comment .username {
-            font-weight: bold;
-        }
-    </style>
-</head>
-
-<body>
-    
-    <h1>Les Animaux du Vallon des Cascades</h1>
-
-    <!-- Section contenant les fiches des animaux -->
-    <div class="animal-cards-container">
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/loutre.jpg" alt="Loutre" />
-            <h3>Les Loutres</h3>
-            <p>Les loutrkznlefzenklfzneflkzneklfnzelkfnzlkfnklzenfuhdsygvb n,kloijuhygtfrxdfcgvhbjkl,;mjhgtfrxdcfghjes sont des mammifères aquatiques souvent vues dans les rivières. Elles sont très sociales et intelligentes.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/ara.jpg" alt="Ara" />
-            <h3>Les Aras</h3>
-            <p>Les aras sont des perroquets colorés, connus pour leur grande intelligence et leur capacité à imiter des sons.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/binturong.jpg" alt="Binturong" />
-            <h3>Les Binturongs</h3>
-            <p>Les binturongs, aussi appelés ours-chat, sont des mammifères nocturnes originaires d'Asie du Sud-Est.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/chevre.jpg" alt="Chèvre" />
-            <h3>Les Chèvres</h3>
-            <p>Les chèvres sont des animaux très agiles, souvent élevées pour leur lait, leur viande ou leur laine.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/mouflon.jpg" alt="Mouflon" />
-            <h3>Les Mouflons</h3>
-            <p>Le mouflon est un ovidé sauvage qui vit dans les montagnes. Il est l'ancêtre des moutons domestiques.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/panda-roux.jpg" alt="Panda-Roux" />
-            <h3>Les Pandas-Roux</h3>
-            <p>Les pandas-roux, petits et mignons, vivent dans les forêts de montagne et sont principalement herbivores.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/panthere.jpg" alt="Panthère" />
-            <h3>Les Panthères</h3>
-            <p>Les panthères sont des félins majestueux, connus pour leur agilité et leur force, souvent symboles de pouvoir.</p>
-        </div>
-
-        <div class="animal-card">
-            <img src="animaux/Le Vallon des cascades/tortue.jpg" alt="Tortue" />
-            <h3>Les Tortues</h3>
-            <p>Les tortues sont des reptiles caractérisés par leur carapace dure. Elles sont très lentes mais peuvent vivre très longtemps.</p>
-        </div>
-    </div>
-
-
-    <!-- Section des commentaires -->
-    <div class="comment-section">
-        <h3>Laissez un commentaire :</h3>
-        <form id="commentForm" class="comment-form">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" required placeholder="Entrez votre nom..." /><br><br>
-
-            <label for="rating">Évaluation (de 1 à 5 étoiles) :</label>
-            <div id="rating" class="stars">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-            </div><br><br>
-
-            <label for="comment">Votre commentaire :</label><br>
-            <textarea id="comment" class="comment-box" rows="4" placeholder="Écrivez votre commentaire ici..." required></textarea><br><br>
-
-            <button type="button" class="submit-btn" onclick="addComment()">Soumettre</button>
+        <!-- Sélection des billets -->
+        <form id="ticketForm" action="#">
+            <h2>Types de billets</h2>
+            <div>
+                <label>Billet Adulte - 20€ :</label>
+                <input type="number" id="adultQuantity" min="0" value="0">
+            </div>
+            <div>
+                <label>Billet Enfant (3-12 ans) - 10€ :</label>
+                <input type="number" id="childQuantity" min="0" value="0">
+            </div>
+            <div>
+                <label>Billet Senior - 15€ :</label>
+                <input type="number" id="seniorQuantity" min="0" value="0">
+            </div>
+            <div>
+                <label>Pass Famille (2 adultes + 2 enfants) - 50€ :</label>
+                <input type="number" id="familyQuantity" min="0" value="0">
+            </div>
+            <div>
+                <label>Pass Annuel - 100€ :</label>
+                <input type="number" id="annualPassQuantity" min="0" value="0">
+            </div>
+            <div>
+                <label>Pass Mensuel - 20€ :</label>
+                <input type="number" id="monthlyPassQuantity" min="0" value="0">
+            </div>
+            <button type="button" onclick="addToCart()">Ajouter au panier</button>
         </form>
 
-        <!-- Zone d'affichage des commentaires -->
-        <div id="commentDisplay"></div>
+        <!-- Panier -->
+        <div id="cart">
+            <h2>Panier</h2>
+            <ul id="cartItems"></ul>
+            <p id="totalPrice">Total : 0€</p>
+            <button type="button" onclick="checkout()">Procéder au paiement</button>
+        </div>
     </div>
 
     <script>
-        // Variables pour les étoiles
-        let selectedStars = 0;
+        // Prix des billets par type
+        const ticketPrices = {
+            adult: 20,
+            child: 10,
+            senior: 15,
+            family: 50,
+            annualPass: 100,
+            monthlyPass: 20
+        };
 
-        // Fonction pour gérer la sélection des étoiles
-        document.querySelectorAll('.star').forEach(star => {
-            star.addEventListener('click', function () {
-                selectedStars = this.getAttribute('data-value');
-                document.querySelectorAll('.star').forEach(s => {
-                    s.classList.remove('selected');
-                });
-                for (let i = 0; i < selectedStars; i++) {
-                    document.querySelectorAll('.star')[i].classList.add('selected');
+        // Panier d'achats
+        let cart = [];
+
+        // Fonction pour ajouter les billets sélectionnés au panier
+        function addToCart() {
+            const quantities = {
+                adult: parseInt(document.getElementById('adultQuantity').value) || 0,
+                child: parseInt(document.getElementById('childQuantity').value) || 0,
+                senior: parseInt(document.getElementById('seniorQuantity').value) || 0,
+                family: parseInt(document.getElementById('familyQuantity').value) || 0,
+                annualPass: parseInt(document.getElementById('annualPassQuantity').value) || 0,
+                monthlyPass: parseInt(document.getElementById('monthlyPassQuantity').value) || 0,
+            };
+
+            // Ajouter les articles au panier
+            for (const [type, quantity] of Object.entries(quantities)) {
+                if (quantity > 0) {
+                    cart.push({ type, quantity, price: ticketPrices[type] * quantity });
                 }
+            }
+
+            // Mettre à jour l'affichage du panier
+            updateCartDisplay();
+        }
+
+        // Mettre à jour l'affichage du panier
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.quantity} x ${getTicketName(item.type)} - ${item.price}€`;
+                cartItems.appendChild(listItem);
+                total += item.price;
             });
-        });
 
-        // Fonction pour ajouter un commentaire
-        function addComment() {
-            const username = document.getElementById('username').value;
-            const commentText = document.getElementById('comment').value;
-            const commentDisplay = document.getElementById('commentDisplay');
+            document.getElementById('totalPrice').textContent = `Total : ${total}€`;
+        }
 
-            if (username && commentText && selectedStars > 0) {
-                // Créer un nouveau commentaire avec l'utilisateur, l'étoile et le texte
-                const newComment = document.createElement('div');
-                newComment.classList.add('comment');
-                newComment.innerHTML = `
-                    <p class="username">${username}</p>
-                    <p class="rating">Évaluation : ${'★'.repeat(selectedStars)}${'☆'.repeat(5 - selectedStars)}</p>
-                    <p>${commentText}</p>
-                `;
-                commentDisplay.appendChild(newComment);
-
-                // Réinitialiser le formulaire
-                document.getElementById('commentForm').reset();
-                document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
-                selectedStars = 0;
-            } else {
-                alert("Veuillez remplir tous les champs !");
+        // Obtenir le nom du billet
+        function getTicketName(type) {
+            switch(type) {
+                case 'adult': return 'Billet Adulte';
+                case 'child': return 'Billet Enfant';
+                case 'senior': return 'Billet Senior';
+                case 'family': return 'Pass Famille';
+                case 'annualPass': return 'Pass Annuel';
+                case 'monthlyPass': return 'Pass Mensuel';
+                default: return '';
             }
         }
+
+        // Fonction pour simuler le paiement
+        function checkout() {
+            alert('Paiement en cours pour un total de ' + document.getElementById('totalPrice').textContent);
+            // Réinitialiser le panier après le paiement
+            cart = [];
+            updateCartDisplay();
+        }
     </script>
+
 </body>
+  <footer>
+    <div class="footer">
+        <p>&copy; 2024 Zoo de la Barben. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="#facebook">
+                <img src="../../assets/logos/facebook.png">
+            </a>
+            <a href="#x">
+                <img src="../../assets/logos/X-Logo.png">
+            </a>
+            <a href="#instagram">
+                <img src="../../assets/logos/Instagram-Logo.png">
+            </a>
+        </div>
+    </div>
+</footer>
 </html>
