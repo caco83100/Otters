@@ -103,12 +103,16 @@
             annualPass: 100,
             monthlyPass: 20
         };
-
+    
         // Panier d'achats
         let cart = [];
-
+    
         // Fonction pour ajouter les billets sélectionnés au panier
         function addToCart() {
+            // Désactive le bouton pour empêcher plusieurs clics
+            document.querySelector('.btnB[onclick="addToCart()"]').disabled = true;
+    
+            // Quantités des billets
             const quantities = {
                 adult: parseInt(document.getElementById('adultQuantity').value) || 0,
                 child: parseInt(document.getElementById('childQuantity').value) || 0,
@@ -118,34 +122,34 @@
                 annualPass: parseInt(document.getElementById('annualPassQuantity').value) || 0,
                 monthlyPass: parseInt(document.getElementById('monthlyPassQuantity').value) || 0,
             };
-
+    
             // Ajouter les articles au panier
             for (const [type, quantity] of Object.entries(quantities)) {
                 if (quantity > 0) {
                     cart.push({ type, quantity, price: ticketPrices[type] * quantity });
                 }
             }
-
+    
             // Mettre à jour l'affichage du panier
             updateCartDisplay();
         }
-
+    
         // Mettre à jour l'affichage du panier
         function updateCartDisplay() {
             const cartItems = document.getElementById('cartItems');
             cartItems.innerHTML = '';
             let total = 0;
-
+    
             cart.forEach(item => {
                 const listItem = document.createElement('li');
                 listItem.textContent = `${item.quantity} x ${getTicketName(item.type)} - ${item.price}€`;
                 cartItems.appendChild(listItem);
                 total += item.price;
             });
-
+    
             document.getElementById('totalPrice').textContent = `Total : ${total}€`;
         }
-
+    
         // Obtenir le nom du billet
         function getTicketName(type) {
             switch(type) {
@@ -159,7 +163,7 @@
                 default: return '';
             }
         }
-
+    
         // Fonction pour simuler le paiement
         function checkout() {
             alert('Paiement en cours pour un total de ' + document.getElementById('totalPrice').textContent);
@@ -167,7 +171,15 @@
             cart = [];
             updateCartDisplay();
         }
+    
+        // Réactiver le bouton "Ajouter au panier" si les quantités sont modifiées
+        document.querySelectorAll('#ticketForm input[type="number"]').forEach(input => {
+            input.addEventListener('input', () => {
+                document.querySelector('.btnB[onclick="addToCart()"]').disabled = false;
+            });
+        });
     </script>
+    
 
 </body>
   <footer>
