@@ -100,3 +100,9 @@ input[type="number"]:hover {
 .btnB:hover {
   background-color: #007812; /* Couleur de fond lors du survol */
 }
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  display: none; /* Caché par défaut */
+}
