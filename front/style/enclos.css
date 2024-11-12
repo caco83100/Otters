@@ -86,3 +86,17 @@ input[type="number"]:hover {
   border-color: #666; /* Couleur de bordure plus sombre au survol */
 }
 
+.btnB {
+  border-radius: 15px; /* Ajustez la valeur pour arrondir plus ou moins */
+  padding: 10px 20px; /* Pour donner un peu de taille et d'espace aux boutons */
+  border: none; /* Supprime la bordure si nécessaire */
+  background-color: #43bb17; /* Ajustez la couleur pour le style souhaité */
+  color: white;
+  font-size: 16px; /* Ajustez selon vos préférences */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Pour un effet de transition */
+}
+
+.btnB:hover {
+  background-color: #007812; /* Couleur de fond lors du survol */
+}
