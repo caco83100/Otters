@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,13 +32,13 @@
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
             <div>
-            <a href="connexion.html" class="btn"><strong>CONNEXION</strong></a>
+            <a href="connexion.php" class="btn"><strong>CONNEXION</strong></a>
             </div>
         </div>
     </head>
     <body>
         <div class="wrapper">
-        <form action="../../back/connexion.php" method="post">
+        <form action="../../back/connexion_test.php" method="post">
             <h1>CONNECTEZ-VOUS</h1>
             <div class="userandpswd">
                 <input type="text" placeholder="Nom d'utilisateur / Adresse e-mail" name="IDENTIFIANT" required>
@@ -42,9 +46,23 @@
             <div class="userandpswd">
                 <input type="password" placeholder="Mot de passe" name="MDP" required>
             </div>
-
+            
+            
+            
             <div id="error-message">
                 <!-- remplir ce div avec un message d'erreur en cas de connexion échouée -->
+                <?php
+                    // Vérifiez si l'élément doit être affiché
+                    
+                    if (isset($_SESSION['afficher_element']) && $_SESSION['afficher_element']) {
+                        echo "Mdp faux";
+                        session_destroy();
+                    }else{
+                        session_destroy();
+                    }
+                     
+                    
+                ?>
             </div>
 
             <div class="remember-forgot">
