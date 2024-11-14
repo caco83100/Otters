@@ -1,3 +1,7 @@
+<?php
+$biome='Le Belvédère';
+include '../../back/swiper.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,67 +54,18 @@
       <!-- Swiper container principal -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/14112020-rhinoceros-4-1-scaled.jpg" alt="Les Rhinocéros" />
-            <p>Les Rhinocéros</p>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/Autruche-fiche.jpg" alt="Les Autruches" />
-            <p>Les Autruches</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/casoar-a-casque-02052020-2-scaled.jpg" alt="Les Casoars" />
-            <p>Les Casoars</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/coati-27022021-1-scaled.jpg" alt="Les coatis" />
-            <p>Les Coatis</p>
-          </div>
-          
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/Crocodile-nain-fiche-2.jpg" alt="Le Crocodile Nain" />
-            <p>Le Crocodile Nain</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/fennec-20052020-9-scaled.jpg" alt="Les Fennecs" />
-            <p>Les Fennecs</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/gnou-19012021-1-scaled.jpg" alt="Les Gnous" />
-            <p>Les Gnous</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/guepard-18102020-2-scaled.jpg" alt="Les Guepards" />
-            <p>Les Guepards</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/oryx-algazelle.jpg" alt="L'Orix Algazelle" />
-            <p>L'Orix Algazelle</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/oryx-beisa-19012021-1-scaled.jpg" alt="L'Orix Beisa" />
-            <p>L'Orix Beisa</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/saimiris-fiche.jpg" alt="Les Saïmiris" />
-            <p>Les Saïmiris</p>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="../../assets/animaux/Le Belvédère/suricate-10062020_-5-1-scaled.jpg" alt="Les Suricates" />
-            <p>Les Suricates</p>
-          </div>
-
+          <?php
+          if (!empty($animaux)) {
+            foreach ($animaux as $animal) {
+              echo '<div class="swiper-slide">';
+              echo "<img src='../../assets/animaux/Le Belvédère/{$animal['nom']}.jpg' alt='Les {$animal['nom']}' />";
+              echo "<p>Les {$animal['nom']}</p>";
+              echo '</div>';  
+            }
+        } else {
+            echo "<p>Aucun animal trouvé.</p>";
+        }
+          ?>
   
         </div>
   

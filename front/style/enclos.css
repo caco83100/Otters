@@ -23,7 +23,7 @@
     max-width: 800px; /* Limite la largeur à 800px, ou vous pouvez ajuster cette valeur */
     margin-top: 30px; /* Ajoute un espace entre le Swiper et la section de commentaires */
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255,255,255,.2);
     border-radius: 8px;
     backdrop-filter: blur(15px);
     background: transparent;
