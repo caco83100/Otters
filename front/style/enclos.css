@@ -112,10 +112,13 @@ input[type="number"]:hover {
 /* NOS SERVICES */
 
 .services {
-  display: flex;           
-  align-items: center;     
-  justify-content: center; 
-  text-align: center;      
-  height: 200px;           
-  
+  display: flex;               /* Utilisation de Flexbox */
+  align-items: center;         /* Centre verticalement le contenu */
+  justify-content: center;     /* Centre horizontalement le contenu */
+  text-align: center;          /* Centre le texte dans le paragraphe */
+  height: 200px;               /* Hauteur fixe pour le div */
+  background-color: #f0f0f0;   /* Couleur de fond */
+  border: 1px solid #ccc;      /* Bordure pour voir le conteneur */
+  width: 100%;                 /* Prend toute la largeur de .wrapped */
+  box-sizing: border-box;      /* Inclut les bordures dans le calcul de largeur */
 }
