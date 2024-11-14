@@ -86,7 +86,8 @@ section {
 
 .imag {
     max-width: 50% ;
-    height: 40px;
+    height: auto;
+    float:right;
 }
 
 /*PARAGRAPHE*/
