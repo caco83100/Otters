@@ -54,7 +54,7 @@
 
 
 
-/* TEST BILLETERIE */
+/* BILLETERIE */
 
 /* Style pour chaque ligne de choix de billet */
 #ticketForm div {
@@ -105,4 +105,17 @@ input[type="number"]:hover {
   color: red;
   margin-top: 10px;
   display: none; /* Caché par défaut */
+}
+
+
+
+/* NOS SERVICES */
+
+.services {
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+  text-align: center;      
+  height: 200px;           
+  
 }
