@@ -23,7 +23,7 @@ $conn->query($req);
 
 $conn->close();
 
-header("Location: ../front/pages/inscription.html");
+header("Location: ../front/pages/inscription.php");
 exit();
 
 ?>
