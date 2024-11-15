@@ -111,15 +111,21 @@ input[type="number"]:hover {
 
 /* NOS SERVICES */
 
-.services {
+.wrappedS {
   display: flex !important;           /* Utilisation de Flexbox */
-  align-items: center !important;     /* Centre verticalement le contenu */
+  align-items: center !important;
+  flex-direction: column !important;     
   justify-content: center !important; /* Centre horizontalement le contenu */
   text-align: center !important;      /* Centre le texte dans le paragraphe */
-  height: 200px;                      /* Hauteur fixe pour le div */
-  background-color: #f0f0f0;          /* Couleur de fond */
-  border: 1px solid #ccc;             /* Bordure pour voir le conteneur */
-  width: 100%;                        /* Prend toute la largeur de .wrapped */
-  box-sizing: border-box;             /* Inclut les bordures dans le calcul de largeur */
-  color: black;
+  width: 85%;
+  max-width: 85%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  color: white;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
 }
