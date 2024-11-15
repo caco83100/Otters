@@ -121,5 +121,5 @@ input[type="number"]:hover {
   border: 1px solid #ccc;             /* Bordure pour voir le conteneur */
   width: 100%;                        /* Prend toute la largeur de .wrapped */
   box-sizing: border-box;             /* Inclut les bordures dans le calcul de largeur */
-  color: black;                       /* Assure la visibilité du texte */
+  color: black;
 }
