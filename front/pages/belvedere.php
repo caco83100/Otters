@@ -27,12 +27,12 @@ include '../../back/swiper.php';
                     <button class="enclos-button"><strong>NOS BIOMES</strong></button>
                     <div class="dropdown-enclos">
                         <a href="présentation_biomes.html">Présentation</a>
-                        <a href="bergerie.html">La Bergerie des reptiles</a>
-                        <a href="vallon.html">Le Vallon des Cascades</a>
-                        <a href="belvedere.html">Le Belvédère</a>
-                        <a href="plateau.html">Le Plateau</a>
-                        <a href="bois.html">Le Bois des Pins</a>
-                        <a href="clairieres.html">Les Clairières</a>
+                        <a href="bergerie.php">La Bergerie des reptiles</a>
+                        <a href="vallon.php">Le Vallon des Cascades</a>
+                        <a href="belvedere.php">Le Belvédère</a>
+                        <a href="plateau.php">Le Plateau</a>
+                        <a href="bois.php">Le Bois des Pins</a>
+                        <a href="clairieres.php">Les Clairières</a>
                     </div>
                 </div>
             <a href="#about"><strong>NOS SERVICES</strong></a>
@@ -57,9 +57,11 @@ include '../../back/swiper.php';
           <?php
           if (!empty($animaux)) {
             foreach ($animaux as $animal) {
+              $animal['nom'] = str_replace("'", "%27", $animal['nom']);
               echo '<div class="swiper-slide">';
-              echo "<img src='../../assets/animaux/Le Belvédère/{$animal['nom']}.jpg' alt='Les {$animal['nom']}' />";
-              echo "<p>Les {$animal['nom']}</p>";
+              echo "<img src='../../assets/animaux/$biome/{$animal['nom']}.jpg' alt=' {$animal['nom']}' />";
+              $animal['nom'] = str_replace("%27", "'", $animal['nom']);
+              echo "<p>{$animal['nom']}</p>";
               echo '</div>';  
             }
         } else {
