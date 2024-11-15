@@ -145,7 +145,7 @@ input[type="number"]:hover {
 }
 
 .boxS {
-  background-color: #97c798;
+  background-color: #efffef;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -183,4 +183,8 @@ input[type="number"]:hover {
 
 .icon {
   margin-right: 0.5rem;
+}
+
+.boxS p {
+  color: #000; /* Texte en noir pour les paragraphes dans .boxS */
 }
