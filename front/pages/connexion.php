@@ -19,6 +19,7 @@ session_start();
                 <div class="enclos-contain">
                     <button class="enclos-button"><strong>NOS BIOMES</strong></button>
                     <div class="dropdown-enclos">
+                        <a href="présentation_biomes.html">Présentation</a>
                         <a href="bergerie.html">La Bergerie 
                             des reptiles</a>
                         <a href="vallon.html">Le Vallon des Cascades</a>
