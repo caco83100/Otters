@@ -95,7 +95,7 @@ section {
 .text-container {
     position: absolute;
     top: 43%; /* Centrer verticalement */
-    left: 10%; /* Centrer horizontalement */
+    left: 6.5%; /* Centrer horizontalement */
     transform: translate(-15%, -50%); /* Pour un vrai centrage */
     color: white;
     z-index: 3; /* Le texte est au-dessus du triangle et de l'image */
