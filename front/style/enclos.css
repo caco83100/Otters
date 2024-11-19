@@ -156,6 +156,11 @@ input[type="number"]:hover {
   font-weight: bold;
   color: #2b2e83;
   margin-bottom: 1rem;
+  display: flex; /* Flexbox pour alignement */
+  align-items: center; /* Centre verticalement l'image et le texte */
+  justify-content: center; /* Centre horizontalement le contenu */
+  gap: 0.5rem; /* Ajoute un espace entre l'image et le texte */
+  text-align: center; /* Assure que tout le texte est centré */
 }
 
 
@@ -182,16 +187,12 @@ input[type="number"]:hover {
   text-align: center;
 }
 
-.icon {
-  margin-right: 0.5rem;
-}
 
 .boxS p {
   color: #000; /* Texte en noir pour les paragraphes dans .boxS */
 }
 
 .icon {
-  margin-right: 0.5rem; /* Ajoute un espace entre l'icône et le texte */
   width: 30px; /* Taille de l'icône */
   height: 30px;
 }
