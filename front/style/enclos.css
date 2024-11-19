@@ -158,6 +158,7 @@ input[type="number"]:hover {
   margin-bottom: 1rem;
 }
 
+
 .highlightS {
   color: #36b736;
   font-weight: bold;
@@ -187,4 +188,10 @@ input[type="number"]:hover {
 
 .boxS p {
   color: #000; /* Texte en noir pour les paragraphes dans .boxS */
+}
+
+.icon {
+  margin-right: 0.5rem; /* Ajoute un espace entre l'icône et le texte */
+  width: 30px; /* Taille de l'icône */
+  height: 30px;
 }
