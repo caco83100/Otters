@@ -95,6 +95,8 @@ input[type="number"]:hover {
   font-size: 16px; /* Ajustez selon vos préférences */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Pour un effet de transition */
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .btnB:hover {
