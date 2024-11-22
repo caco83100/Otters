@@ -124,12 +124,12 @@ section {
 
 .text-container2 {
     position: absolute;
-    top: 20%; /* Centrer verticalement */
-    right: 6%; /* Centrer horizontalement */
-    transform: translate(-50%, -50%); /* Pour un vrai centrage */
+    top: 16%; /* Centrer verticalement */
+    right: -16%; /* Centrer horizontalement */
+    transform: translate(-50%, -15%); /* Pour un vrai centrage */
     color: white;
     z-index: 3; /* Le texte est au-dessus du triangle et de l'image */
-    text-align: center;
+    text-align: right;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
