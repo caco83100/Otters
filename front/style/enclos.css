@@ -203,10 +203,8 @@ input[type="number"]:hover {
 /* PRESENTATION BIOMES*/
 
 .grid-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* L'élément commence par le haut */
-  overflow: hidden; /* Empêche le contenu de déborder */
-  height:fit-content; /* Laissez la hauteur s'ajuster automatiquement */
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
 }
