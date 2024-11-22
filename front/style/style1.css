@@ -21,6 +21,7 @@ body {
 h1 {
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    font-size: clamp(40px, 10vw, 80px);
     color:white;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
     line-height: 1;
@@ -40,7 +41,7 @@ h1 {
 /* Style de la vidéo en plein écran */
 .full-width-video {
     width: 100%;
-    height: 400px;
+    height:auto;
     display: block;
     filter: blur(3px); /* Ajoute un léger flou */
 }
@@ -222,11 +223,12 @@ section {
     text-align: center;
     padding: 0 16px; /* Espacement horizontal des liens */
     text-decoration: none;
-    font-size: 18px;
-    font-family: '¨Poppins', sans-serif;
+    font-size: clamp(14px, 2vw, 20px);
+    font-family: 'Poppins', sans-serif;
     height: 100%; /* Hauteur complète de la barre */
     transition: background-color 0.3s ease;
 }
+
 
 .nav a:hover {
     background-color: #007812;
@@ -255,6 +257,20 @@ section {
     width: 200px; /* Largeur fixe pour le champ de recherche */
 }
 
+@media (max-width: 768px) {
+    .search-container {
+        margin-left: 8px; /* Réduit l'espace sur les écrans plus petits */
+        justify-content: flex-start; /* Place le champ à gauche */
+        width: 100%; /* Adapte à la largeur de l'écran */
+    }
+
+    .nav input[type="text"] {
+        font-size: 15px; /* Réduit la taille du texte */
+        width: 100%; /* Utilise toute la largeur disponible */
+    }
+}
+
+
 /* BOUTON NOS ENCLOS */
 
 .enclos-contain {
@@ -274,6 +290,7 @@ section {
     font-size: 18px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, 2vw, 20px);
     height: 100%; /* Prendre toute la hauteur de la barre de navigation */
     display: flex;
     align-items: center;
@@ -319,22 +336,43 @@ section {
 
 /* BOUTON CONNEXION */
 
-.btn{
+.btn {
     display: inline-block;
     text-decoration: none;
-    padding: 14px 40px;
-    color:#007812;
-    background-image: linear-gradient(45deg,#986b2b,#007812);
-    font-size:12px;
-    border-radius:30px;
-    border-top-right-radius:30px;
-    transition: background-color 0.3s ease;
+    padding: 14px 40px; /* Espace interne du bouton */
+    color: #007812;
+    background-image: linear-gradient(45deg, #986b2b, #007812);
+    font-size: 12px;
+    border-radius: 30px;
+    border-top-right-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Centre le texte dans le bouton */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 }
 
-.btn:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+.btn:hover {
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
 }
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 12px 30px; /* Réduit le padding sur les écrans moyens */
+        font-size: 11px; /* Diminue légèrement la taille de la police */
+        border-radius: 20px; /* Adoucit les coins pour un meilleur rendu */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 10px 20px; /* Réduit encore le padding pour les petits écrans */
+        font-size: 10px; /* Taille de police plus petite */
+        width: 100%; /* Le bouton occupe toute la largeur */
+        max-width: 300px; /* Limite la largeur maximale */
+        margin: 0 auto; /* Centre le bouton horizontalement */
+        display: block; /* Gère les cas où le parent a une largeur limitée */
+    }
+}
+
 
 /* LOGIN PAGE */
 
