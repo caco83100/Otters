@@ -39,7 +39,7 @@ session_start();
     <body>
         <div class="wrapper">
         <form action="../../back/connexion_test.php" method="post">
-            <h1>CONNECTEZ-VOUS</h1>
+            <h2>CONNECTEZ-VOUS</h2>
             <div class="userandpswd">
                 <input type="text" placeholder="Nom d'utilisateur / Adresse e-mail" name="IDENTIFIANT" required>
             </div>

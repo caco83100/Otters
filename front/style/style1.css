@@ -21,10 +21,28 @@ body {
 h1 {
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(40px, 10vw, 80px);
+    font-size: clamp(40px, 5vw, 80px);
     color:white;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
     line-height: 1;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(30px, 2vw, 50px);
+    color:white;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    line-height: 1;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(20px, 1vw, 30px);
+    color:white;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    line-height: 1;  
 }
 
 /* VIDEO ACCUEIL */
