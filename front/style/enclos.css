@@ -199,3 +199,14 @@ input[type="number"]:hover {
   width: 30px; /* Taille de l'icône */
   height: 30px;
 }
+
+/* PRESENTATION BIOMES*/
+
+.grid-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* L'élément commence par le haut */
+  overflow: hidden; /* Empêche le contenu de déborder */
+  height:fit-content; /* Laissez la hauteur s'ajuster automatiquement */
+  text-align: center;
+}
