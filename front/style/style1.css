@@ -124,8 +124,10 @@ section {
 
 .imag {
     display: block;
+    max-width: 100%;
     width: 100%; 
     height: auto;
+    object-fit: cover;
   }
   
 
@@ -136,7 +138,7 @@ section {
     transform: translateY(-50%); 
     width: 100%; 
     height: auto;
-    z-index: 10; 
+    z-index: 2; 
     opacity: 0.9; 
   }
 
@@ -147,8 +149,24 @@ section {
     transform: translateY(-50%); 
     width: 100%; 
     height: auto;
-    z-index: 10; 
+    z-index: 2; 
     opacity: 0.9; 
+  }
+
+  @media (max-width: 768px) {
+    /* Réduire les tailles sur les écrans moyens */
+    .img.dessus {
+      width: 40%; /* Taille plus petite pour la deuxième image */
+      left: -15%; /* Ajustement de position */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Réglages pour les petits écrans */
+    .img.dessus {
+      width: 50%; /* Encore plus petite pour s'adapter aux écrans mobiles */
+      left: -10%; /* Ajustement minime */
+    }
   }
 
 /* Styles pour les images */
@@ -416,7 +434,7 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     color: white;
     border-radius: 10px;
-    padding: 30px 40px;
+    padding: 1rem;
     margin-bottom: 30px;
     box-sizing: border-box;
 }
