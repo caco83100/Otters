@@ -112,7 +112,7 @@ section {
 
 /* Sections de contenu avec diagonales */
 
-.section1, .section2, .section3 {
+.section1, .section2 {
     display: flex;
     width: 100vw;
     max-width: 1200px;
@@ -122,53 +122,34 @@ section {
     box-sizing: border-box;
 }
 
-.text-container {
+.imag {
+    display: block;
+    width: 100%; /* Ajustez selon vos besoins */
+    height: auto;
+  }
+  
+  /* Deuxième image (superposée) */
+  .img.dessus {
     position: absolute;
-    top: 43%; /* Centrer verticalement */
-    left: 6.5%; /* Centrer horizontalement */
-    transform: translate(-15%, -50%); /* Pour un vrai centrage */
-    color: white;
-    z-index: 3; /* Le texte est au-dessus du triangle et de l'image */
-    text-align: left;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
-}
+    top: 32%; /* Centrage vertical */
+    left: -30%; /* Ajustez pour superposer sur la gauche */
+    transform: translateY(-50%); /* Centre verticalement */
+    width: 100%; /* Taille personnalisée, ajustez au besoin */
+    height: auto;
+    z-index: 10; /* Assure que l'image est par-dessus */
+    opacity: 0.9; /* Facultatif : transparence pour un effet */
+  }
 
-.text-container2 {
+  .img.dessus2 {
     position: absolute;
-    top: 16%; /* Centrer verticalement */
-    right: -16%; /* Centrer horizontalement */
-    transform: translate(-50%, -15%); /* Pour un vrai centrage */
-    color: white;
-    z-index: 3; /* Le texte est au-dessus du triangle et de l'image */
-    text-align: right;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
-}
-
-.triangle-topleft {
-    width: 0;
-    height: 0;
-    border-top: 900px solid #43bb17;
-    border-bottom: 400px solid #43bb17;
-    border-right: 500px solid transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index:2;
-    pointer-events: none;
-}
-
-.triangle-topright {
-    width: 0;
-    height: 0;
-    border-top: 900px solid #43bb17;  /* Couleur verte du triangle */
-    border-bottom: 400px solid #43bb17; /* Couleur verte du triangle */
-    border-left: 500px solid transparent; /* Utilisation de 'border-left' pour créer l'angle droit à droite */
-    position: absolute;
-    top: 0;
-    right: 0;  /* Positionner le triangle dans le coin supérieur droit */
-    z-index: 2;
-    pointer-events: none;  /* Le triangle ne doit pas interférer avec les autres éléments */
-}
+    top: 32%; /* Centrage vertical */
+    right: -30%; /* Ajustez pour superposer sur la gauche */
+    transform: translateY(-50%); /* Centre verticalement */
+    width: 100%; /* Taille personnalisée, ajustez au besoin */
+    height: auto;
+    z-index: 10; /* Assure que l'image est par-dessus */
+    opacity: 0.9; /* Facultatif : transparence pour un effet */
+  }
 
 /* Styles pour les images */
 
