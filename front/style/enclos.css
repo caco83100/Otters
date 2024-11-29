@@ -152,7 +152,14 @@ input[type="number"]:hover {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+  transition: transform 0.2s ease;
 }
+
+.boxS:hover {
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+
 
 .box-headerS {
   font-size: 1.2rem;
