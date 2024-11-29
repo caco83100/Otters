@@ -217,6 +217,11 @@ section {
     filter:sepia(0.5);
 }
 
+.card a:hover {
+    background-color: #007812;
+    color: rgb(0, 0, 0);
+}
+
 /* LISTE */
 
 .centered-list {
