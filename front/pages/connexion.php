@@ -17,7 +17,7 @@ session_start();
                 <img src="../../assets/logos/logo_png.png">
             </a>
             <div class="enclos-contain">
-                    <button class="enclos-button"><strong>NOS BIOMES</strong></button>
+                    <button class="enclos-button"><strong>NOS ENCLOS</strong></button>
                     <div class="dropdown-enclos">
                         <a href="présentation_biomes.html">Présentation</a>
                         <a href="bergerie.php">La Bergerie des reptiles</a>

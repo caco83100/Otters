@@ -188,18 +188,34 @@ section {
 /* DISPOSITIONS D'IMAGES */
 
 *{
-    padding:0;
+    box-sizing:border-box;
     margin:0;
+    padding:0;
 }
 
-.contain-photos{
-max-width:1224px;
-width:90%;
-margin:auto;
-padding:40px 0;
+:root{
+    --bgColor:#232323;
 }
 
-/*A CONTINUER */
+.cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:1rem;
+}
+
+.card{
+    height:200px;
+    width:250px;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border: 1px solid rgb(255,238,207);
+    border-radius: 10px;
+    filter:sepia(0.5);
+}
 
 /* LISTE */
 
