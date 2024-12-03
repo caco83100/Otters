@@ -58,6 +58,9 @@ session_start();
                         echo("Mot de passe erroné, veuillez réessayer");
                     }
                 }
+                else{
+                    echo("Veuillez renseigner tous les champs");
+                }
 
                     if(isset($_SESSION['afficher_element']) && $_SESSION['afficher_element']){
                         session_destroy();
