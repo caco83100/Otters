@@ -28,13 +28,13 @@
     </head>
     <body>
         <br>
-        <div class="wrapper2">
             <?php
                 /* fetch in biome data the name of the biome
                    then fetch each enclosure and print the name 
                    of the first animal
                 */
                 foreach($biomeData as $biome){
+                    echo '<div class="wrapper2" style=" background-color: '.$biome["biome_color"].'">';
                     echo '<h2>'.$biome['biome_name'].'<h2>';
                     echo '<br>';
                     echo '<div class="cards">';
@@ -46,6 +46,7 @@
                     }
                     echo '</div>';
                     echo '<br>';
+                    echo '</div>';
                 }
 
                 /*girls, you have to make these picture clicable 
@@ -53,7 +54,6 @@
                 you can just put html code in php by type echo 'your html here';
                 */
             ?>
-        </div>
     </body>
 
 <footer>
