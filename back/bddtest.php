@@ -1,7 +1,7 @@
 <?php
     include './bdd.php';
-    $data=get_database();
-    echo "<pre>";
-    print_r($data);
-    echo "</pre>";
+    $biome=get_database();
+    
+    $tab=json_encode($biome);
+    echo $tab;
 ?>

@@ -42,7 +42,7 @@
                         if($enclosure==$biome["biome_name"] || $enclosure==$biome["biome_color"]){
                             continue;
                         }
-                        echo '<div class="card"><img src="../../assets/animaux/'.$enclosure['animals'][0].'.jpg"></div>';
+                        echo '<div class="card" data-enclos='.$enclosure["id_enclosure"].'><img src="../../assets/animaux/'.$enclosure['animals'][0].'.jpg"></div>';
                     }
                     echo '</div>';
                     echo '<br>';
@@ -54,7 +54,13 @@
                 you can just put html code in php by type echo 'your html here';
                 */
             ?>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <div id="popup-content"></div>
+            </div>
     </body>
+    <script src="./popupBiome.js"></script>
 
 <footer>
     <div class="footer">
