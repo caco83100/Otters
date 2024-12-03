@@ -59,7 +59,7 @@ session_start();
                     }
                 }
                 else{
-                    echo("Veuillez renseigner tous les champs");
+                    echo'<div class="centered-paragraph">Veuillez renseigner tous les champs</div>';
                 }
 
                     if(isset($_SESSION['afficher_element']) && $_SESSION['afficher_element']){
@@ -69,12 +69,12 @@ session_start();
                     
                 ?>
             </div>
-
+            <br>
             <div class="remember-forgot">
                 <label><input type="checkbox">Se souvenir de moi</label>
                 <a href="#">Mot de passe oublié ?</a>
             </div>
-
+            <br>
             <button type="submit" class="bton">Connexion</button>
 
             <div class="register-link">
