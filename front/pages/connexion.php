@@ -45,7 +45,7 @@ session_start();
                     // Vérifiez si l'élément doit être affiché
                     
                     if (isset($_SESSION['afficher_element']) && $_SESSION['afficher_element']) {
-                        echo "Mdp faux";
+                        echo "Mot de passe erroné, veuillez réessayer";
                         session_destroy();
                     }else{
                         session_destroy();
