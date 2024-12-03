@@ -44,13 +44,25 @@ session_start();
                 <?php
                     // Vérifiez si l'élément doit être affiché
                     
-                    if (isset($_SESSION['afficher_element']) && $_SESSION['afficher_element']) {
-                        echo "Mot de passe erroné, veuillez réessayer";
-                        session_destroy();
-                    }else{
+                    if (isset($_POST['IDENTIFIANT'], $_POST['MDP'])) {
+                        $isAdminIdentifiant = 'admin'; 
+                        $isAdminMdp = '1234'; 
+                    
+
+                    if($_POST["IDENTIFIANT"]==$isAdminIdentifiant AND $_POST["MDP"]==$isAdminMdp){
+                        $_SESSION['MDP']=$_POST['MDP'];
+                        header('Location: admin.php');
+                        exit();
+                    } else{
+                        $_SESSION['afficher_element']=true;
+                        echo("Mot de passe erroné, veuillez réessayer");
+                    }
+                }
+
+                    if(isset($_SESSION['afficher_element']) && $_SESSION['afficher_element']){
                         session_destroy();
                     }
-                     
+
                     
                 ?>
             </div>
