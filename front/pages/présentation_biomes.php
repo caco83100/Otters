@@ -16,7 +16,7 @@
         <div class="nav">
             <a href="accueil_zoo.html"><img src="../../assets/logos/logo_png.png"></a>
             <a href="présentation_biomes.php"><strong>NOS ENCLOS</strong></a>
-            <a href="#about"><strong>NOS SERVICES</strong></a>
+            <a href="services.html"><strong>NOS SERVICES</strong></a>
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
             <a href="connexion.php" class="btn"><strong>CONNEXION</strong></a>
