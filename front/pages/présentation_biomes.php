@@ -1,4 +1,7 @@
 <?php
+    include '../../back/bdd.php';
+    $biomeData=get_database();
+
 ?>
 
 <html>
@@ -25,85 +28,22 @@
     <body>
         <br>
         <div class="wrapper2">
-            <h2>La Bergerie des Reptiles</h2>
-            <br>
-            <div class="cards">
-                <div class="card"><img src="../../assets/animaux/Les Pythons.jpg"></div>
-                <div class="card"><img src="../../assets/animaux/Les Tortues.jpg"></div>
-                <div class="card"><img src="../../assets/animaux/Les Iguanes.jpg"></div>
-            </div>
-            <br>
-        <h2>Le Vallon des Cascades</h2>
-        <br>
-        <div class="cards">
-            <div class="card"><img src="../../assets/animaux/Les Aras.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Grands Hoccos.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Panthères.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Pandas Roux.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Lémuriens.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Chèvres Naines.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Mouflons.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Loutres.jpg"></div>
+            <?php
+                foreach($biomeData as $biome){
+                    echo '<h2>'.$biome['biome_name'].'<h2>';
+                    echo '<br>';
+                    echo '<div class="cards">';
+                    foreach($biome as $enclosure){
+                        if($enclosure==$biome["biome_name"] || $enclosure==$biome["biome_color"]){
+                            continue;
+                        }
+                        echo '<div class="card"><img src="../../assets/animaux/'.$enclosure['animals'][0].'.jpg"></div>';
+                    }
+                    echo '</div>';
+                    echo '<br>';
+                }
+            ?>
         </div>
-        <br>
-        <h2>Le Belvédère</h2>
-        <br>
-        <div class="cards">
-            <div class="card"><img src="../../assets/animaux/Les Rhinocéros.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Fennecs.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Suricates.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Coatis.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Tapirs.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Autruches.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Guépards.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Crocodiles nains.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Casoars.jpg"></div>
-        </div>
-        <br>
-        <h2>Le Plateau</h2>
-        <br>
-        <div class="cards">
-            <div class="card"><img src="../../assets/animaux/Les Tamarins.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Ouistitis.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Gibbons.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Varans de Komodo.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Girafes.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Loups à crinière.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Hyènes.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Zèbres.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Hippopotames.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Lions.jpg"></div>
-        </div>
-        <br>
-        <h2>Les Clairières</h2>
-        <br>
-        <div class="cards">
-            <div class="card"><img src="../../assets/animaux/Les Cigognes.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Ânes de Somalie.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Yacks.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Ibis.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Pécaris.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Flamants roses.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Émeux.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Porcs-épics.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Bisons.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Dromadaires.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Lynx.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Servals.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Chiens des buissons.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Tigres.jpg"></div>
-        </div>
-        <br>
-        <h2>Le Bois des Pins</h2>
-        <br>
-        <div class="cards">
-            <div class="card"><img src="../../assets/animaux/Les Macaques crabier.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Cerfs.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Vautours.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Antilopes.jpg"></div>
-            <div class="card"><img src="../../assets/animaux/Les Loups d'Europe.jpg"></div>
-        </div>
-    </div>
     </body>
 
 <footer>
