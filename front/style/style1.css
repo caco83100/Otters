@@ -200,7 +200,7 @@ section {
 .cards{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap:1rem;
+    gap:0.5rem;
 }
 
 .card{
@@ -428,6 +428,19 @@ section {
 
 .wrapper{
     width:600px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    color:white;
+    border-radius:10px;
+    padding:30px 40px;
+    margin-bottom: 30px;
+    margin-top:60px;
+}
+
+.wrapper2{
+    width:900px;
     background: transparent;
     border: 2px solid rgba(255,255,255,.2);
     backdrop-filter: blur(15px);

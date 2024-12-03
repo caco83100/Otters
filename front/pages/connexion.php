@@ -16,18 +16,7 @@ session_start();
             <a href="accueil_zoo.html">
                 <img src="../../assets/logos/logo_png.png">
             </a>
-            <div class="enclos-contain">
-                    <button class="enclos-button"><strong>NOS ENCLOS</strong></button>
-                    <div class="dropdown-enclos">
-                        <a href="présentation_biomes.html">Présentation</a>
-                        <a href="bergerie.php">La Bergerie des reptiles</a>
-                        <a href="vallon.php">Le Vallon des Cascades</a>
-                        <a href="belvedere.php">Le Belvédère</a>
-                        <a href="plateau.php">Le Plateau</a>
-                        <a href="bois.php">Le Bois des Pins</a>
-                        <a href="clairieres.php">Les Clairières</a>
-                    </div>
-                </div>
+            <a href="présentation_biomes.php"><strong>NOS ENCLOS</strong></a>
             <a href="#about"><strong>NOS SERVICES</strong></a>
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
