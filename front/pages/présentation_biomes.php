@@ -29,6 +29,10 @@
         <br>
         <div class="wrapper2">
             <?php
+                /* fetch in biome data the name of the biome
+                   then fetch each enclosure and print the name 
+                   of the first animal
+                */
                 foreach($biomeData as $biome){
                     echo '<h2>'.$biome['biome_name'].'<h2>';
                     echo '<br>';
@@ -42,6 +46,11 @@
                     echo '</div>';
                     echo '<br>';
                 }
+
+                /*girls, you have to make these picture clicable 
+                and showing a popup with a carousel that i will fill with picture
+                you can just put html code in php by type echo 'your html here';
+                */
             ?>
         </div>
     </body>
