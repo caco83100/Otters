@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!--caractères spéciaux bien affichés-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--adapter tel et tab-->
+        <link rel="icon" type="image/png" href="../../assets/logos/otter.png">
+        <title>Présentation</title>
+        <link rel="stylesheet" href="../style/style1.css">
+        <link rel="stylesheet" href="../style/comm.css">
+        <link rel="stylesheet" href="../style/enclos.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <div class="nav">
+            <a href="accueil_zoo.html">
+                <img src="../../assets/logos/logo_png.png">
+            </a>
+            <a href="présentation_biomes.php"><strong>NOS ENCLOS</strong></a>
+            <a href="services.html"><strong>NOS SERVICES</strong></a>
+            <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
+            <input type="text" placeholder="Recherche..">
+            <div>
+            <a href="connexion.php" class="btn"><strong>CONNEXION</strong></a>
+            </div>
+        </div>
+    </head>
+    <body>
+        <br>
+        <div id="biome-container"></div>
+        <script>
+            fetch('../../back/popupBiome.php')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const container = document.getElementById('biome-container');
+
+        if (!container) {
+            throw new Error("L'élément avec l'ID 'biome-container' est introuvable.");
+        }
+
+        // Parcourir chaque biome
+        Object.values(data).forEach(biome => {
+            // Vérifiez que les données du biome sont correctes
+            if (!biome.biome_name || !biome.biome_color) {
+                console.error('Données invalides pour le biome :', biome);
+                return; // Passez au biome suivant
+            }
+
+            // Créer une div pour le biome
+            const biomeDiv = document.createElement('div');
+            biomeDiv.classList.add('wrapper2');
+            biomeDiv.style.backgroundColor = biome.biome_color;
+
+            // Ajouter le titre du biome
+            const title = document.createElement('h2');
+            title.textContent = biome.biome_name;
+            biomeDiv.appendChild(title);
+
+            // Créer la section des cartes
+            const cardsDiv = document.createElement('div');
+            cardsDiv.classList.add('cards');
+
+            // Parcourir les enclos du biome
+            Object.keys(biome)
+                .filter(key => !isNaN(key)) // Filtrer les propriétés numériques (enclos)
+                .forEach(key => {
+                    const enclosure = biome[key];
+
+                    if (enclosure && enclosure.animals && enclosure.animals.length > 0) {
+                        // Créer une carte pour l'enclos
+                        const card = document.createElement('div');
+                        card.setAttribute('class','card');
+                        card.setAttribute('data-enclos', enclosure.id_enclosure);
+
+                        // Ajouter l'image du premier animal
+                        const img = document.createElement('img');
+                        img.src = `../../assets/animaux/${enclosure.animals[0]}.jpg`;
+                        img.alt = enclosure.animals[0];
+                        card.appendChild(img);
+
+                        cardsDiv.appendChild(card);
+                    } else {
+                        console.warn(`Aucun animal trouvé pour l'enclos :`, enclosure);
+                    }
+                });
+
+            biomeDiv.appendChild(cardsDiv);
+            container.appendChild(biomeDiv);
+        });
+    })
+    .catch(error => {
+        console.error('Erreur lors du chargement des données JSON :', error);
+    });
+        </script>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <div id="popup-content"></div>
+            </div>
+    </body>
+    <script src="./popupBiome.js"></script>
+
+<footer>
+    <div class="footer">
+            <p>&copy; 2024 Zoo de la Barben. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#facebook">
+                    <img src="../../assets/logos/facebook.png">
+                </a>
+                <a href="#x">
+                    <img src="../../assets/logos/X-Logo.png">
+                </a>
+                <a href="#instagram">
+                    <img src="../../assets/logos/Instagram-Logo.png">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>

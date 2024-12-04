@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include '../../back/bdd.php';
+include './bdd.php';
 
 // Simule des données si elles ne proviennent pas de la base de données.
 $tabPopup=get_database();
