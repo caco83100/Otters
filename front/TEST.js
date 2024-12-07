@@ -107,5 +107,5 @@ fetch('../../front/pages/TEST2.php?id=${id}') // Remplacez l'URL par celle corre
         const data = JSON.parse(text); // Tente de convertir en JSON
         console.log('Données JSON :', data);
     })
-    .catch(error => console.error('Erreur lors de la récupération des données :', error));
+    .catch(error => console.error('Erreur lors de la récupération des données :', error));Z
 

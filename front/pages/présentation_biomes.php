@@ -13,7 +13,11 @@
         <link rel="stylesheet" href="../style/style1.css">
         <link rel="stylesheet" href="../style/comm.css">
         <link rel="stylesheet" href="../style/enclos.css">
-
+        <!-- Lien vers le CSS de Swiper -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      
+        <!-- Lien vers le script JS de Swiper -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -62,9 +66,11 @@
                 <div class="popup-content">
                 <span class="close-btn">&times;</span>
                 <div id="popup-content"></div>
+                </div>
             </div>
     </body>
     <script src="./popupBiome.js"></script>
+    
 
 <footer>
     <div class="footer">

@@ -68,13 +68,78 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function displayPopup(enclosure) {
         const animals = enclosure.animals || [];
+        console.log(enclosure);
+        console.log(animals);
         popupContent.innerHTML = `
             <h2>Enclos ID : ${enclosure.id_enclosure}</h2>
             <ul>
                 ${animals.map((animal) => `<li>${animal}</li>`).join('')}
             </ul>
-            <p>Nombre de repas : ${enclosure.meal}</p>
+            <p>Nombre de repas: ${enclosure.meal}</p>
             
+            <!-- Lignes HTML insérées ici -->
+            <div class="enclos-container">
+                <h1>Le Belvédère</h1>
+                
+                <!-- Swiper container principal -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                    ${animals.map((animal) => ` <div class="swiper-slide"><img src='../../assets/animaux/${animal}.jpg' alt='${animal}'><p>${animal}</p></div>`).join('')}
+                    </div>
+
+                    <!-- Pagination et navigation -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            
+            <div class="comment-section">
+                <h3>Laissez un commentaire :</h3>
+                <form id="commentForm" class="comment-form">
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" required placeholder="Entrez votre nom..." /><br><br>
+
+                    <label for="rating">Évaluation (de 1 à 5 étoiles) :</label>
+                    <div id="rating" class="stars">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div><br><br>
+
+                    <label for="comment">Votre commentaire :</label><br>
+                    <textarea id="comment" class="comment-box" rows="4" placeholder="Écrivez votre commentaire ici..." required></textarea><br><br>
+
+                    <button type="button" class="submit-btn" onclick="addComment()">Soumettre</button>
+                </form>
+                <div id="commentDisplay"></div>
+            </div>
         `;
+        //Script pour initialiser Swiper
+
+        const swiper = new Swiper('.mySwiper', {
+          // Activer la boucle
+          loop: true,
+  
+          // Paramètres de navigation
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+  
+          // Pagination
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+  
+          // Lecture automatique
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+        });
     }
 });
