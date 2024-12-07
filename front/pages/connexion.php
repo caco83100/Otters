@@ -51,7 +51,7 @@ session_start();
 
                     if($_POST["IDENTIFIANT"]==$isAdminIdentifiant AND $_POST["MDP"]==$isAdminMdp){
                         $_SESSION['MDP']=$_POST['MDP'];
-                        header('Location: admin.php');
+                        header('Location: index.php');
                         exit();
                     } else{
                         $_SESSION['afficher_element']=true;
