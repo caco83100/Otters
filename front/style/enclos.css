@@ -261,3 +261,9 @@ input[type="number"]:hover {
   display: block;
   margin: 0 auto 20px; /* Centre l'image avec un espace en dessous */
 }
+
+/* map interactive */
+area[role-enclos]:hover{
+  background-color: #ff0000;
+  border: solid 1px black;
+}
