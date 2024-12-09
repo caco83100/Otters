@@ -1,9 +1,3 @@
-<?php
-    include '../../back/bdd.php';
-    $biomeData=get_database();
-
-?>
-
 <html>
     <head>
         <meta charset="UTF-8"> <!--caractères spéciaux bien affichés-->
@@ -25,7 +19,7 @@
             <a href="accueil_zoo.html">
                 <img src="../../assets/logos/logo_png.png">
             </a>
-            <a href="présentation_biomes.php"><strong>NOS ENCLOS</strong></a>
+            <a href="présentation_biomes.html"><strong>NOS ENCLOS</strong></a>
             <a href="services.html"><strong>NOS SERVICES</strong></a>
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
@@ -35,41 +29,17 @@
         </div>
     </head>
     <body>
-        <br>
-            <?php
-                /* fetch in biome data the name of the biome
-                   then fetch each enclosure and print the name 
-                   of the first animal
-                */
-                foreach($biomeData as $biome){
-                    echo '<div class="wrapper2" style=" background-color: '.$biome["biome_color"].'">';
-                    echo '<h2>'.$biome['biome_name'].'<h2>';
-                    echo '<br>';
-                    echo '<div class="cards">';
-                    foreach($biome as $enclosure){
-                        if($enclosure==$biome["biome_name"] || $enclosure==$biome["biome_color"]){
-                            continue;
-                        }
-                        echo '<div class="card" data-enclos='.$enclosure["id_enclosure"].'><img src="../../assets/animaux/'.$enclosure['animals'][0].'.jpg"></div>';
-                    }
-                    echo '</div>';
-                    echo '<br>';
-                    echo '</div>';
-                }
-
-                /*girls, you have to make these picture clicable 
-                and showing a popup with a carousel that i will fill with picture
-                you can just put html code in php by type echo 'your html here';
-                */
-            ?>
-            <div id="popup" class="popup">
+        <div id="container"></div> 
+        
+        <div class="popup">
                 <div class="popup-content">
-                <span class="close-btn">&times;</span>
-                <div id="popup-content"></div>
+                    <span class="close-btn">&times;</span>
                 </div>
-            </div>
+        </div>
+
+        <script src="./présentation_biomes.js"></script>
+
     </body>
-    <script src="./popupBiome.js"></script>
     
 
 <footer>
