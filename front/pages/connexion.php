@@ -40,9 +40,7 @@ session_start();
             
             
             <div id="error-message">
-                <!-- remplir ce div avec un message d'erreur en cas de connexion échouée -->
                 <?php
-                    // Vérifiez si l'élément doit être affiché
                     
                     if (isset($_POST['IDENTIFIANT'], $_POST['MDP'])) {
                         $isAdminIdentifiant = 'admin'; 
