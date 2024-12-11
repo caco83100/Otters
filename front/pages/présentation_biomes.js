@@ -22,8 +22,10 @@ try {
         biomeSection.style.backgroundColor = biome.biome_color;
 
         const biomeTitle = document.createElement("h2");
+        const biomeSpace = document.createElement("br");
         biomeTitle.textContent = `${biome.biome_name}`;
         biomeSection.appendChild(biomeTitle);
+        biomeSection.appendChild(biomeSpace);
         
 
         // run through enclosure
@@ -80,7 +82,6 @@ function popupBiome() {
     }
     
     console.log("Boxes trouvées :", boxes.length);
-    console.log("Premier élément trouvé :", boxes[0]);
 
     boxes.forEach((box) => {
         box.addEventListener("click", () => {
