@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 10, 2024 at 03:59 PM
--- Server version: 8.3.0
--- PHP Version: 8.1.28
+-- Hôte : 127.0.0.1:3306
+-- Généré le : lun. 09 déc. 2024 à 13:03
+-- Version du serveur : 8.3.0
+-- Version de PHP : 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `otters`
+-- Base de données : `otters`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `animaux`
+-- Structure de la table `animaux`
 --
 
 DROP TABLE IF EXISTS `animaux`;
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `animaux` (
 ) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `animaux`
+-- Déchargement des données de la table `animaux`
 --
 
 INSERT INTO `animaux` (`id_animal`, `name`) VALUES
@@ -111,7 +111,7 @@ INSERT INTO `animaux` (`id_animal`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `biomes`
+-- Structure de la table `biomes`
 --
 
 DROP TABLE IF EXISTS `biomes`;
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `biomes` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `biomes`
+-- Déchargement des données de la table `biomes`
 --
 
 INSERT INTO `biomes` (`id_biome`, `name`, `color`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `biomes` (`id_biome`, `name`, `color`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enclosure`
+-- Structure de la table `enclosure`
 --
 
 DROP TABLE IF EXISTS `enclosure`;
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `enclosure` (
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `enclosure`
+-- Déchargement des données de la table `enclosure`
 --
 
 INSERT INTO `enclosure` (`id_enclosure`, `id_biome`, `meal`, `travaux`) VALUES
@@ -210,7 +210,7 @@ INSERT INTO `enclosure` (`id_enclosure`, `id_biome`, `meal`, `travaux`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enclosure_animals`
+-- Structure de la table `enclosure_animals`
 --
 
 DROP TABLE IF EXISTS `enclosure_animals`;
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `enclosure_animals` (
 ) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `enclosure_animals`
+-- Déchargement des données de la table `enclosure_animals`
 --
 
 INSERT INTO `enclosure_animals` (`id`, `id_enclosure`, `id_animal`) VALUES
@@ -300,77 +300,7 @@ INSERT INTO `enclosure_animals` (`id`, `id_enclosure`, `id_animal`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `geo_animals`
---
-
-DROP TABLE IF EXISTS `geo_animals`;
-CREATE TABLE IF NOT EXISTS `geo_animals` (
-  `animalId` bigint NOT NULL,
-  `posX` int DEFAULT NULL,
-  `posY` int DEFAULT NULL,
-  `pathX` int DEFAULT NULL,
-  `pathY` int DEFAULT NULL,
-  PRIMARY KEY (`animalId`),
-  KEY `geo_animals_posX_IDX` (`posX`,`posY`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `geo_path`
---
-
-DROP TABLE IF EXISTS `geo_path`;
-CREATE TABLE IF NOT EXISTS `geo_path` (
-  `pathId` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `startX` int DEFAULT NULL,
-  `startY` int DEFAULT NULL,
-  `endX` int DEFAULT NULL,
-  `endY` int DEFAULT NULL,
-  `path` longtext,
-  `length` decimal(10,0) DEFAULT NULL,
-  PRIMARY KEY (`pathId`),
-  KEY `geo_path_startX_IDX` (`startX`,`startY`) USING BTREE,
-  KEY `geo_path_endX_IDX` (`endX`,`endY`) USING BTREE,
-  KEY `geo_path_length_IDX` (`length`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3;
-
---
--- Dumping data for table `geo_path`
---
-
-INSERT INTO `geo_path` (`pathId`, `startX`, `startY`, `endX`, `endY`, `path`, `length`) VALUES
-(4, 360, 1314, 765, 998, '[{\"x\":360,\"y\":1314},{\"x\":687,\"y\":1078},{\"x\":744,\"y\":1051},{\"x\":765,\"y\":998}]', 523),
-(6, 765, 998, 720, 900, '[{\"x\":\"765\",\"y\":\"998\"},{\"x\":726,\"y\":938},{\"x\":722,\"y\":918},{\"x\":720,\"y\":900}]', 110),
-(7, 765, 998, 844, 930, '[{\"x\":\"765\",\"y\":\"998\"},{\"x\":804,\"y\":969},{\"x\":844,\"y\":930}]', 104),
-(9, 765, 998, 818, 1154, '[{\"x\":\"765\",\"y\":\"998\"},{\"x\":799,\"y\":1118},{\"x\":818,\"y\":1154}]', 165),
-(14, 818, 1154, 1431, 1439, '[{\"x\":\"818\",\"y\":\"1154\"},{\"x\":853,\"y\":1169},{\"x\":890,\"y\":1204},{\"x\":922,\"y\":1225},{\"x\":983,\"y\":1248},{\"x\":1009,\"y\":1272},{\"x\":1061,\"y\":1296},{\"x\":1107,\"y\":1311},{\"x\":1154,\"y\":1334},{\"x\":1207,\"y\":1350},{\"x\":1277,\"y\":1380},{\"x\":1327,\"y\":1383},{\"x\":1349,\"y\":1389},{\"x\":1400,\"y\":1423},{\"x\":1431,\"y\":1439}]', 686),
-(15, 1431, 1439, 1460, 1460, '[{\"x\":\"1431\",\"y\":\"1439\"},{\"x\":1460,\"y\":1460}]', 36),
-(16, 818, 1154, 1397, 1512, '[{\"x\":\"818\",\"y\":\"1154\"},{\"x\":837,\"y\":1197},{\"x\":905,\"y\":1273},{\"x\":933,\"y\":1296},{\"x\":966,\"y\":1312},{\"x\":1029,\"y\":1336},{\"x\":1118,\"y\":1371},{\"x\":1200,\"y\":1401},{\"x\":1252,\"y\":1416},{\"x\":1294,\"y\":1427},{\"x\":1361,\"y\":1482},{\"x\":1397,\"y\":1512}]', 703),
-(17, 1397, 1512, 1460, 1460, '[{\"x\":\"1397\",\"y\":\"1512\"},{\"x\":\"1460\",\"y\":\"1460\"}]', 82),
-(18, 1460, 1460, 1496, 1478, '[{\"x\":\"1460\",\"y\":\"1460\"},{\"x\":1480,\"y\":1474},{\"x\":1496,\"y\":1478}]', 41),
-(19, 1496, 1478, 1531, 1487, '[{\"x\":\"1496\",\"y\":\"1478\"},{\"x\":1531,\"y\":1487}]', 36),
-(20, 1531, 1487, 1707, 1529, '[{\"x\":\"1531\",\"y\":\"1487\"},{\"x\":1548,\"y\":1492},{\"x\":1553,\"y\":1501},{\"x\":1564,\"y\":1511},{\"x\":1579,\"y\":1518},{\"x\":1688,\"y\":1533},{\"x\":1707,\"y\":1529}]', 189),
-(21, 1707, 1529, 1728, 1521, '[{\"x\":\"1707\",\"y\":\"1529\"},{\"x\":1728,\"y\":1521}]', 22),
-(22, 1397, 1512, 1689, 1637, '[{\"x\":\"1397\",\"y\":\"1512\"},{\"x\":1415,\"y\":1527},{\"x\":1432,\"y\":1549},{\"x\":1452,\"y\":1575},{\"x\":1491,\"y\":1609},{\"x\":1546,\"y\":1633},{\"x\":1613,\"y\":1640},{\"x\":1689,\"y\":1637}]', 339),
-(23, 1689, 1637, 1728, 1521, '[{\"x\":\"1689\",\"y\":\"1637\"},{\"x\":1712,\"y\":1599},{\"x\":1723,\"y\":1573},{\"x\":1726,\"y\":1557},{\"x\":1728,\"y\":1536},{\"x\":\"1728\",\"y\":\"1521\"}]', 125),
-(24, 1728, 1521, 1803, 1524, '[{\"x\":\"1728\",\"y\":\"1521\"},{\"x\":1744,\"y\":1515},{\"x\":1792,\"y\":1524},{\"x\":1803,\"y\":1524}]', 77),
-(25, 1803, 1524, 1840, 1518, '[{\"x\":\"1803\",\"y\":\"1524\"},{\"x\":1827,\"y\":1522},{\"x\":1840,\"y\":1518}]', 38),
-(26, 1689, 1637, 1852, 1591, '[{\"x\":\"1689\",\"y\":\"1637\"},{\"x\":1780,\"y\":1633},{\"x\":1852,\"y\":1591}]', 174),
-(28, 1852, 1591, 1803, 1524, '[{\"x\":\"1852\",\"y\":\"1591\"},{\"x\":1849,\"y\":1585},{\"x\":1850,\"y\":1576},{\"x\":1835,\"y\":1575},{\"x\":1834,\"y\":1560},{\"x\":1819,\"y\":1559},{\"x\":1819,\"y\":1543},{\"x\":1803,\"y\":1542},{\"x\":\"1803\",\"y\":\"1524\"}]', 111),
-(29, 1840, 1518, 2054, 1439, '[{\"x\":\"1840\",\"y\":\"1518\"},{\"x\":1875,\"y\":1506},{\"x\":1902,\"y\":1502},{\"x\":1927,\"y\":1490},{\"x\":1974,\"y\":1474},{\"x\":1992,\"y\":1467},{\"x\":2030,\"y\":1450},{\"x\":2054,\"y\":1439}]', 229),
-(30, 1852, 1591, 2097, 1445, '[{\"x\":\"1852\",\"y\":\"1591\"},{\"x\":1904,\"y\":1560},{\"x\":1934,\"y\":1540},{\"x\":1973,\"y\":1515},{\"x\":2014,\"y\":1494},{\"x\":2050,\"y\":1476},{\"x\":2081,\"y\":1458},{\"x\":2097,\"y\":1445}]', 286),
-(31, 2097, 1445, 2054, 1439, '[{\"x\":\"2097\",\"y\":\"1445\"},{\"x\":2088,\"y\":1441},{\"x\":2074,\"y\":1440},{\"x\":\"2054\",\"y\":\"1439\"}]', 44),
-(32, 2054, 1439, 1937, 1339, '[{\"x\":\"2054\",\"y\":\"1439\"},{\"x\":2018,\"y\":1421},{\"x\":2010,\"y\":1416},{\"x\":1986,\"y\":1391},{\"x\":1947,\"y\":1351},{\"x\":1937,\"y\":1339}]', 156),
-(34, 1937, 1339, 1815, 1290, '[{\"x\":\"1937\",\"y\":\"1339\"},{\"x\":1918,\"y\":1318},{\"x\":1833,\"y\":1294},{\"x\":1815,\"y\":1290}]', 135),
-(35, 1815, 1290, 1688, 1224, '[{\"x\":\"1815\",\"y\":\"1290\"},{\"x\":1709,\"y\":1268},{\"x\":1699,\"y\":1264},{\"x\":1690,\"y\":1258},{\"x\":1686,\"y\":1252},{\"x\":1684,\"y\":1241},{\"x\":1686,\"y\":1228},{\"x\":1688,\"y\":1224}]', 166),
-(36, 1688, 1224, 1821, 1154, '[{\"x\":\"1688\",\"y\":\"1224\"},{\"x\":1717,\"y\":1215},{\"x\":1736,\"y\":1211},{\"x\":1757,\"y\":1205},{\"x\":1767,\"y\":1201},{\"x\":1780,\"y\":1194},{\"x\":1796,\"y\":1183},{\"x\":1804,\"y\":1175},{\"x\":1811,\"y\":1167},{\"x\":1821,\"y\":1154}]', 155),
-(37, 1821, 1154, 2091, 1294, '[{\"x\":\"1821\",\"y\":\"1154\"},{\"x\":1878,\"y\":1157},{\"x\":1931,\"y\":1177},{\"x\":1988,\"y\":1195},{\"x\":2018,\"y\":1216},{\"x\":2045,\"y\":1242},{\"x\":2089,\"y\":1293},{\"x\":2090,\"y\":1293},{\"x\":2091,\"y\":1294}]', 317);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `services`
+-- Structure de la table `services`
 --
 
 DROP TABLE IF EXISTS `services`;
@@ -383,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -401,7 +331,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`Id`, `NOM`, `PRENOM`, `DATE`, `PSEUDO`, `MAIL`, `MDP`, `NL`, `PP`) VALUES
