@@ -40,7 +40,7 @@ if(!$_SESSION['MDP']){
             <option value="2">Enclos 2</option>
             <option value="3">Enclos 3</option>
         </select>
-        <button type="submit">Valider</button>
+        <button type="submit" class="submitbtn">Valider</button>
         </form>
 
         <div id="result"></div>
