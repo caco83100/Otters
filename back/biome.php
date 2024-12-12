@@ -1,16 +1,10 @@
 <?php
+include "./bdd.php";
 header('Content-Type: application/json');
 
 function get_database()
 {
-    /* Connection to database */
-    $server="localhost";
-    $username="root";
-    $password="";
-    $databaseName="Otters";
-
-    $conn=new mysqli($server,$username,$password,$databaseName);
-    if($conn->connect_error){die("Connection BDD échouée");}
+    global $conn;
 
     $req="SELECT animaux.id_animal, animaux.name AS animal_name, enclosure.id_enclosure, 
                    enclosure.meal, biomes.id_biome, biomes.name AS biome_name, biomes.color AS biome_color

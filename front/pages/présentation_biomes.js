@@ -4,7 +4,7 @@ async function fetchAndDisplay() {
 
 try {
     // fetch data from back
-    const result = await fetch("../../back/popupBiome.php");
+    const result = await fetch("../../back/biome.php");
     
     if (!result.ok) {
       throw new Error(`Erreur HTTP : ${result.status}`);
@@ -89,7 +89,7 @@ function popupBiome() {
             console.log("ID d'enclos cliqué :", enclosureId);
 
             // Requête AJAX pour récupérer les données JSON
-            fetch('../../back/popupBiome.php')
+            fetch('../../back/biome.php')
                 .then((response) => response.json())
                 .then((data) => {
                     const enclosure = findEnclosureById(data, enclosureId);
