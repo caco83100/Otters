@@ -534,3 +534,79 @@ footer {
 .hidden {
     display: none;
 }
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+}
+
+.profile-dropdown-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: #13ad13;
+    border: 1px solid #007812;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 150px;
+    justify-content: center;
+    color:black;
+    opacity:1;
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img i {
+    font-size: 18px;
+    color: black;
+}
+
+.profile-dropdown-btn:hover {
+    background-color: #007812;
+}
+
+.profile-dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left:0;
+    width: 100%;
+    background-color: #43bb17;
+    border: 1px solid #007812;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-dropdown-list li {
+    padding: 10px;
+}
+
+.profile-dropdown-list li a {
+    text-decoration: none;
+    color:black;
+    opacity:1;
+    display: block;
+    font-size: 1.5rem;
+}
+
+.profile-dropdown-list li:hover {
+    background-color: #007812;
+}
+
+.profile-dropdown:hover .profile-dropdown-list {
+    display: block;
+}
