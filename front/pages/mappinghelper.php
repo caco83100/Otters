@@ -38,7 +38,7 @@ if ($_POST['action']=="save"){
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
             <div>
-            <a href="connexion.php" class="btn"><strong>CONNEXION</strong></a>
+            <a href="connexion.html" class="btn"><strong>CONNEXION</strong></a>
             </div>
         </div>
     </head>

@@ -1,4 +1,4 @@
-console.log("script chargé");
+console.log("script autentification chargé");
 
 document.getElementById("toggle-to-register").addEventListener("click", () => {
     document.getElementById("login-form").classList.add("hidden");
@@ -43,7 +43,7 @@ document.getElementById("login-form").addEventListener("submit", (e) => {
             console.log(result);
             alert("Connexion réussie !");
             localStorage.setItem("token", result.token);
-            //window.location.href = "accueil_zoo.html";
+            window.location.href = "accueil_zoo.html";
         },
         (errorMessage) => {
             document.getElementById("error-message").textContent = errorMessage;

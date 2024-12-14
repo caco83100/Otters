@@ -1,4 +1,4 @@
-console.log("Script chargé !");
+console.log("Script admin chargé !");
 
 // Variables globales
 let enclosData = null; // Stocke les données des enclos

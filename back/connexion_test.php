@@ -22,7 +22,7 @@ $trueMdp = $result->fetch_assoc();
 session_start();
 
 $_SESSION['afficher_element'] = ($mdp!=$trueMdp["MDP"]);
-header("Location: ../front/pages/connexion.php");
+header("Location: ../front/pages/connexion.html");
 exit();
 
 ?>
