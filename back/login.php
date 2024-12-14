@@ -22,9 +22,9 @@ if (empty($username) || empty($password)) {
 }
 
 // Vérifier si l'utilisateur existe dans la base de données
-$query = "SELECT * FROM users WHERE pseudo = ? LIMIT 1";
+$query = "SELECT * FROM users WHERE pseudo = ? || mail = ? LIMIT 1";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("s", $username);
+$stmt->bind_param("ss", $username, $username);
 $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();

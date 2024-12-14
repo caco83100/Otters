@@ -35,3 +35,9 @@ window.onload = function() {
         if (profileButton) profileButton.style.display = 'none';  // Cacher le bouton "Profil"
     }
 };
+
+document.getElementById("logout-button").addEventListener("click", () => {
+    localStorage.removeItem("token"); // Supprime le token
+    alert("Vous avez été déconnecté.");
+    window.location.href = "../pages/accueil_zoo.html"; // Redirige vers la page de connexion
+});
