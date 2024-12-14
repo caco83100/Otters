@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 require_once "./jwt_helper.php";
-require_once "./bdd.php"; // Inclure ton fichier de configuration de la base de données
+require_once "./bdd.php";
 
 // Active l'affichage des erreurs pour le débogage
 ini_set('display_errors', 1);
@@ -40,7 +40,7 @@ if (!$user) {
 // Vérification du mot de passe avec le hachage
  if (password_verify($password, $user['MDP'])) {
      // Générer le JWT si l'authentification est réussie
-     $jwt = generate_jwt($user['Id']); // Assurez-vous d'avoir la fonction generate_jwt
+     $jwt = generate_jwt($user['Id'],$user['role']); 
      echo json_encode(["success" => true, "token" => $jwt]);
  } else {
      echo json_encode(["error" => "Mot de passe incorrect"]);
