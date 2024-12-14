@@ -1,4 +1,25 @@
 console.log("Script token chargé");
+
+function isAdmin() {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.log("Pas de token, donc l'utilisateur n'est pas connecté");
+        return false;
+    }
+
+    // Décoder le token (le décodage n'affecte pas la sécurité, car il ne le vérifie pas)
+    const payload = JSON.parse(atob(token.split('.')[1]));  // Décoder le payload (partie du milieu du JWT)
+    
+
+    if (payload.role == "admin") {
+        console.log("Tu es admin");
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function isTokenValid() {
     const token = localStorage.getItem("token");
 
@@ -22,13 +43,24 @@ function isTokenValid() {
 
 window.onload = function() {
     const isLoggedIn = isTokenValid();  // Vérifier si le token est valide
+    const admin = isAdmin();
     const loginButton = document.getElementById("login-button");  // Bouton "Connexion"
     const profileButton = document.getElementById("profile-button");  // Bouton "Profil"
-
+    const profileDropdownList = document.getElementsByClassName("profile-dropdown-list")[0];
     if (isLoggedIn) {
         // Si l'utilisateur est connecté, cacher le bouton "Connexion" et afficher le bouton "Profil"
         if (loginButton) loginButton.style.display = 'none';  // Cacher le bouton "Connexion"
-        if (profileButton) profileButton.style.display = 'block';  // Afficher le bouton "Profil"
+        if (profileButton){
+            profileButton.style.display = 'block'; // Afficher le bouton "Profil"
+            if(admin){
+            const li= document.createElement('li');
+            const adminLink = document.createElement('a');
+            adminLink.textContent="Administration";
+            adminLink.setAttribute("href","./admin.html");
+            li.appendChild(adminLink);
+            profileDropdownList.insertBefore(li,profileDropdownList.firstChild);
+            }
+          }
     } else {
         // Si l'utilisateur n'est pas connecté, cacher le bouton "Profil" et afficher le bouton "Connexion"
         if (loginButton) loginButton.style.display = 'block';  // Afficher le bouton "Connexion"
