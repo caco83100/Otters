@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     map: {
       text: "Le plan interactif vous aide à repérer facilement les attractions, services et zones du parc. Cliquez pour découvrir !",
       image: "../../assets/images/map.jpg",
-      redirect: "page_plan.html" // Redirection vers la page HTML de la carte
+      redirect: "map.html" // Redirection vers la page HTML de la carte
     },
     adresse: {
       text: "Route du Château, 13330 La Barben, France.",
