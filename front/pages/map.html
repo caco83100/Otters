@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> <!--caractères spéciaux bien affichés-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../../assets/logos/otter.png">
+        <title>Page d'accueil</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style1.css">
+        <link rel="stylesheet" href="../style/enclos.css">
+        <link rel="stylesheet" href="../style/comm.css">
+        <div class="nav">
+            <a href="accueil_zoo.html">
+                <img src="../../assets/logos/logo_png.png">
+            </a>
+            <a href="présentation_biomes.html"><strong>NOS ENCLOS</strong></a>
+            <a href="services.html"><strong>NOS SERVICES</strong></a>
+            <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
+            <input type="text" placeholder="Recherche..">
+
+            <!-- place pour le bouton -->
+            <div id="login-button">
+                <a href="connexion.html" class="btn"><strong>CONNEXION</strong></a>
+            </div>
+            <div id="profile-button" class="profile-dropdown">
+                <button class="profile-dropdown-btn">
+                    <div class="profile-img">
+                        <img id="profile-button-pp">
+                    </div>
+                    <span><strong  id="profile-button-name"></strong></span>
+                </button>
+                <ul class="profile-dropdown-list">
+                    <li><a href="./profil.html">Profil</a></li>
+                    <li><button id="logout-button">Déconnexion</button></li>
+                </ul>
+            </div>
+        </div>
+        <script src="../scripts/conn.js"></script>
+        <script src="../scripts/map.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper3 map-display">
+            <canvas id="geomap" width="<?php echo $finalwidth; ?>" height="<?php echo $finalheight; ?>">
+            </canvas>
+            <svg  style="position:absolute; top:0; left:0" id="mapping">
+            </svg>
+            <button id="reset">Recommencer</button>
+        </div>
+        <footer>
+            <div class="footer">
+                <p>&copy; 2024 Zoo de la Barben. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#facebook">
+                        <img src="../../assets/logos/facebook.png">
+                    </a>
+                    <a href="#x">
+                        <img src="../../assets/logos/X-Logo.png">
+                    </a>
+                    <a href="#instagram">
+                        <img src="../../assets/logos/Instagram-Logo.png">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
