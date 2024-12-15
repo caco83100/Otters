@@ -5,13 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--adapter tel et tab-->
         <link rel="icon" type="image/png" href="../../assets/logos/otter.png">
         <title>Présentation</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="../style/style1.css">
         <link rel="stylesheet" href="../style/comm.css">
         <link rel="stylesheet" href="../style/enclos.css">
-        <!-- Lien vers le CSS de Swiper -->
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-      
-        <!-- Lien vers le script JS de Swiper -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,9 +31,9 @@
             <div id="profile-button" class="profile-dropdown">
                 <button class="profile-dropdown-btn">
                     <div class="profile-img">
-                        <i class="bi bi-person-circle"></i>
+                        <img id="profile-button-pp">
                     </div>
-                    <span><strong>Louloutre</strong></span>
+                    <span><strong  id="profile-button-name"></strong></span>
                 </button>
                 <ul class="profile-dropdown-list">
                     <li><a href="./profil.html">Profil</a></li>

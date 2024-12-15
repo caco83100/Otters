@@ -1,5 +1,44 @@
 console.log("Script token chargé");
 
+function getName(){
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.log("Pas de token, donc l'utilisateur n'est pas connecté");
+        return null;
+    }
+
+    // Décoder le token (le décodage n'affecte pas la sécurité, car il ne le vérifie pas)
+    const payload = JSON.parse(atob(token.split('.')[1]));  // Décoder le payload (partie du milieu du JWT)
+    
+
+    if (payload.prenom != null) {
+        console.log(`Tu es ${payload.prenom}`);
+        return payload.prenom;
+    }else{
+        return null;
+    }
+}
+
+function getPP(){
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.log("Pas de token, donc l'utilisateur n'est pas connecté");
+        return null;
+    }
+
+    // Décoder le token (le décodage n'affecte pas la sécurité, car il ne le vérifie pas)
+    const payload = JSON.parse(atob(token.split('.')[1]));  // Décoder le payload (partie du milieu du JWT)
+    
+
+    if (payload.pp != null) {
+        return payload.pp;
+    }else{
+        return null;
+    }
+}
+
 function isAdmin() {
     const token = localStorage.getItem("token");
 
@@ -44,14 +83,24 @@ function isTokenValid() {
 window.onload = function() {
     const isLoggedIn = isTokenValid();  // Vérifier si le token est valide
     const admin = isAdmin();
+    const name = getName();
+    const pp = getPP();
     const loginButton = document.getElementById("login-button");  // Bouton "Connexion"
     const profileButton = document.getElementById("profile-button");  // Bouton "Profil"
+    const profileButtonName = document.getElementById("profile-button-name");
+    const profileButtonPP = document.getElementById("profile-button-pp");
     const profileDropdownList = document.getElementsByClassName("profile-dropdown-list")[0];
     if (isLoggedIn) {
         // Si l'utilisateur est connecté, cacher le bouton "Connexion" et afficher le bouton "Profil"
         if (loginButton) loginButton.style.display = 'none';  // Cacher le bouton "Connexion"
         if (profileButton){
             profileButton.style.display = 'block'; // Afficher le bouton "Profil"
+            if(name!= null){
+                profileButtonName.textContent=name;
+            }
+            if(pp!= null){
+                profileButtonPP.setAttribute("src",`../../assets/pp/${pp}.png`);
+            }
             if(admin){
             const li= document.createElement('li');
             const adminLink = document.createElement('a');

@@ -40,7 +40,7 @@ if (!$user) {
 // Vérification du mot de passe avec le hachage
  if (password_verify($password, $user['MDP'])) {
      // Générer le JWT si l'authentification est réussie
-     $jwt = generate_jwt($user['Id'],$user['role']); 
+     $jwt = generate_jwt($user['Id'],$user['role'],$user['PRENOM'],$user['PP']); 
      echo json_encode(["success" => true, "token" => $jwt]);
  } else {
      echo json_encode(["error" => "Mot de passe incorrect"]);
