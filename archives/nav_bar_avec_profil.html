@@ -20,7 +20,10 @@
             <a href="services.html"><strong>NOS SERVICES</strong></a>
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
-            <div class="profile-dropdown">
+            <div id="login-button">
+                <a href="connexion.html" class="btn"><strong>CONNEXION</strong></a>
+                </div>
+            <div id="profile-button" class="profile-dropdown hidden">
                 <button class="profile-dropdown-btn">
                     <div class="profile-img">
                         <i class="bi bi-person-circle"></i>
@@ -28,8 +31,8 @@
                     <span><strong>Louloutre</strong></span>
                 </button>
                 <ul class="profile-dropdown-list">
-                    <li><a href="#">Profil</a></li>
-                    <li><a href="#">Déconnexion</a></li>
+                    <li><a href="./profil.html">Profil</a></li>
+                    <li><button id="logout-button">Déconnexion</button></li>
                 </ul>
             </div>            
         </div>

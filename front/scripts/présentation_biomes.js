@@ -1,4 +1,4 @@
-console.log("Script chargé !");
+console.log("Script biome-popup chargé !");
 
 async function fetchAndDisplay() {
 

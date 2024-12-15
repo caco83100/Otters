@@ -23,7 +23,7 @@
             <a href="services.html"><strong>NOS SERVICES</strong></a>
             <a href="billeterie.html"><strong>PRENEZ VOS BILLETS</strong></a>
             <input type="text" placeholder="Recherche..">
-            <a href="connexion.php" class="btn"><strong>CONNEXION</strong></a>
+            <a href="connexion.html" class="btn"><strong>CONNEXION</strong></a>
         </div>
     </head>
     <body>

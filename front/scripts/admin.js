@@ -1,4 +1,28 @@
-console.log("Script chargé !");
+console.log("Script admin chargé !");
+
+// verrifie si c'est un admin
+function isAdmin() {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.log("Pas de token, donc l'utilisateur n'est pas connecté");
+        return false;
+    }
+
+    // Décoder le token (le décodage n'affecte pas la sécurité, car il ne le vérifie pas)
+    const payload = JSON.parse(atob(token.split('.')[1]));  // Décoder le payload (partie du milieu du JWT)
+    
+
+    if (payload.role == "admin") {
+        console.log("Tu es admin");
+        return true;
+    }else{
+        return false;
+    }
+}
+const admin=isAdmin();
+
+if(admin){
 
 // Variables globales
 let enclosData = null; // Stocke les données des enclos
@@ -184,3 +208,7 @@ document.getElementById('editEnclosForm').addEventListener('submit', function (e
 
 // Charger les données au démarrage
 document.addEventListener('DOMContentLoaded', fetchAndDisplay);
+
+}else{
+    window.location.href = "../pages/accueil_zoo.html";
+}
