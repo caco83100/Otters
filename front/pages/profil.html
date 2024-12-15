@@ -49,7 +49,33 @@
             <p id="DATE"></p> 
             <p id="PSEUDO"></p> 
             <p id="MAIL"></p>  
+            
+            <!-- Formulaire pour éditer le profil -->
+            <button id="edit-profile-btn">Modifier le profil</button>
+            <form id="edit-profile-form" style="display: none;">
+                <p>Nom : </p>
+                <input type="text" id="edit-nom" placeholder="Nom">
+                <p>Prenom :</p>
+                <input type="text" id="edit-prenom" placeholder="Prénom">
+                <p>Date :</p>
+                <input type="date" id="edit-date">
+                <p>Pseudo :</p>
+                <input type="text" id="edit-pseudo" placeholder="Pseudo">
+                <p>Mail :</p>
+                <input type="email" id="edit-mail" placeholder="E-mail">
+                <h3>Choisir une photo de profil :</h3>
+                <div id="pp-options">
+                    <img id="pp-1" class="pp-option" src="../../assets/pp/1.png" data-pp="1" alt="PP 1">
+                    <img id="pp-2" class="pp-option" src="../../assets/pp/2.png" data-pp="2" alt="PP 2">
+                    <img id="pp-3" class="pp-option" src="../../assets/pp/3.png" data-pp="3" alt="PP 3">
+                    <img id="pp-4" class="pp-option" src="../../assets/pp/4.png" data-pp="4" alt="PP 4">
+                </div>
+                <!-- Champ caché pour transmettre la photo sélectionnée -->
+                <input type="hidden" id="edit-pp" value="">
+                <button id="cancel-edit-btn" type="button">Annuler</button>
+                <button type="button" id="save-profile-btn">Sauvegarder</button>
+            </form>
         </div>
         <script src="../scripts/profil.js"></script>
-        </body>
+    </body>
     </html>
