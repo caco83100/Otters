@@ -1,3 +1,4 @@
+console.log("script map chargé");
 var pathlist = {};
 var animallist = {};
 var pointlist = [];
