@@ -41,12 +41,12 @@
     </head>
 
     <body>
-        <div class="wrapper3 map-display">
-            <canvas id="geomap" width="<?php echo $finalwidth; ?>" height="<?php echo $finalheight; ?>">
-            </canvas>
-            <svg  style="position:absolute; top:0; left:0" id="mapping">
-            </svg>
-            <button id="reset">Recommencer</button>
+        <div class="center-map">
+            <div class="wrapper3 map-display">
+                <canvas id="geomap" width="<?php echo $finalwidth; ?>" height="<?php echo $finalheight; ?>"></canvas>
+                <svg style="position:absolute; top:0; left:0" id="mapping"></svg>
+                <button class="map-btn" id="reset">Recommencer</button>
+            </div>
         </div>
     </body>
         <footer>
