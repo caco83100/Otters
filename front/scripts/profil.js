@@ -72,8 +72,9 @@ function saveUserProfile() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Profil mis à jour avec succès ! Certains changement seront effectif lors de votre prochaine connexion");
-                    location.reload();
+                    alert("Profil mis à jour avec succès ! Veuillez vous reconnecter");
+                    localStorage.removeItem("token"); // Supprime le token
+                    window.location.href = "../pages/connexion.html"; // Redirige vers la page de connexion
                 } else {
                     console.error(data.error);
                     alert("Erreur lors de la mise à jour du profil.");

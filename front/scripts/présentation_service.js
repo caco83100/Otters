@@ -1,6 +1,20 @@
 console.log("Script chargé !");
 console.log("Boxes trouvées :", document.querySelectorAll(".boxS").length);
 
+try {
+
+  // fetch data from back
+  const result = await fetch("../../back/service.php");
+    
+  if (!result.ok) {
+    throw new Error(`Erreur HTTP : ${result.status}`);
+  }
+  const services =await result.json();
+  
+} catch (error) {
+  console.error("Erreur lors de la récupération des données :", error);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Sélection de toutes les boxes avec la classe "boxS"
   const boxes = document.querySelectorAll(".boxS");

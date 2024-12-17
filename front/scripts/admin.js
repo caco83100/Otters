@@ -20,6 +20,7 @@ function isAdmin() {
         return false;
     }
 }
+
 const admin=isAdmin();
 
 if(admin){

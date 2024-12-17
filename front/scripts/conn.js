@@ -74,6 +74,7 @@ function isTokenValid() {
     const currentTime = Math.floor(Date.now() / 1000);  // Temps actuel en secondes
     if (payload.exp < currentTime) {
         console.log("Le token est expiré");
+        localStorage.removeItem('token');
         return false;
     }
     console.log("Le token est valide");
