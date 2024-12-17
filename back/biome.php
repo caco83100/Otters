@@ -7,7 +7,8 @@ function get_database()
     global $conn;
 
     $req="SELECT animaux.id_animal, animaux.name AS animal_name, enclosure.id_enclosure, 
-                   enclosure.meal, biomes.id_biome, biomes.name AS biome_name, biomes.color AS biome_color
+                   enclosure.meal, biomes.id_biome, biomes.name AS biome_name, biomes.color AS biome_color,
+                   enclosure.travaux AS travaux
             FROM animaux
             INNER JOIN enclosure_animals ON animaux.id_animal=enclosure_animals.id_animal
             INNER JOIN enclosure ON enclosure.id_enclosure=enclosure_animals.id_enclosure
@@ -30,7 +31,8 @@ function get_database()
         }
 
         $enclosureId=(int)$row['id_enclosure'];
-        $meal=(int)$row['meal'];
+        $meal=$row['meal'];
+        $travaux=$row['travaux'];
         $animalName=$row['animal_name'];
 
         /* Check if the enclosure already exists in this biome */
@@ -45,7 +47,7 @@ function get_database()
 
         /* If no matching enclosure is found, add a new enclosure entry */
         if(!$enclosureFound){
-            $biomeData[$biomeId][]=['id_enclosure'=>$enclosureId,'meal'=>$meal,'animals'=>[$animalName]];
+            $biomeData[$biomeId][]=['id_enclosure'=>$enclosureId,'meal'=>$meal,'travaux'=>$travaux,'animals'=>[$animalName]];
         }
     }
 

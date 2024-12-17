@@ -125,7 +125,8 @@ function displayPopup(enclosure, popupContent) {
         <ul>
             ${animals.map((animal) => `<li>${animal}</li>`).join('')}
         </ul>
-        <p>Nombre de repas: ${enclosure.meal}</p>
+        <p>Heure de repas: ${enclosure.meal}</p>
+        <p>Travaux: ${enclosure.travaux}</p>
         
         <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">

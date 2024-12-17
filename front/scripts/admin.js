@@ -119,16 +119,19 @@ document.getElementById('animals').addEventListener('change', function () {
     // Ajouter les IDs sélectionnés au champ de texte sans écraser le contenu existant
     selectedIds.forEach(id => {
         const currentText = animalsText.value.trim();
-        if (!currentText.includes(id)) {
-            // Si le champ de texte est vide, on ajoute directement l'ID
+        
+        const currentIds = currentText.split(',').map(item => item.trim());
+        // Vérifier si l'ID est déjà présent dans la liste
+        if (!currentIds.includes(id)) {
+            
             if (currentText === "") {
                 animalsText.value += id;
             } else {
-                // Sinon, ajouter une virgule avant l'ID
+                
                 animalsText.value += ',' + id;
             }
         }
-    });
+    });;
 
     console.log("IDs des animaux sélectionnés : ", animalsText.value);
 });
@@ -204,7 +207,7 @@ document.getElementById('cancelEdit').addEventListener('click', function () {
 document.getElementById('editEnclosForm').addEventListener('submit', function (event) {
     event.preventDefault();
     saveEnclosData();
-    //location.reload(); // Recharger la page pour voir les changements
+    location.reload(); // Recharger la page pour voir les changements
 });
 
 // Charger les données au démarrage

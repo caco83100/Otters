@@ -1,19 +1,23 @@
 console.log("Script chargé !");
 console.log("Boxes trouvées :", document.querySelectorAll(".boxS").length);
 
-try {
+async function getServices() {
+  try {
 
-  // fetch data from back
-  const result = await fetch("../../back/service.php");
+    // fetch data from back
+    const result = await fetch("../../back/service.php");
     
-  if (!result.ok) {
-    throw new Error(`Erreur HTTP : ${result.status}`);
-  }
-  const services =await result.json();
+    if (!result.ok) {
+      throw new Error(`Erreur HTTP : ${result.status}`);
+    }
+    const services =await result.json();
+    return services;
   
-} catch (error) {
+  } catch (error) {
   console.error("Erreur lors de la récupération des données :", error);
+  }
 }
+const services=getServices();
 
 document.addEventListener("DOMContentLoaded", function () {
   // Sélection de toutes les boxes avec la classe "boxS"
