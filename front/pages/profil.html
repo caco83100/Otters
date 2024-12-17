@@ -40,15 +40,17 @@
     <body>
         <div class="wrapper">
             <h1>PROFIL</h1>
-            <img id="PP" src="" alt="Photo de profil">
-            <p id="NOM"></p>
-            <p id="PRENOM"></p> 
-            <p id="DATE"></p> 
-            <p id="PSEUDO"></p> 
-            <p id="MAIL"></p>  
-            
+            <div id='profile-form'>
+                <img id="PP" src="" alt="Photo de profil">
+                <p id="NOM"></p>
+                <p id="PRENOM"></p> 
+                <p id="DATE"></p> 
+                <p id="PSEUDO"></p> 
+                <p id="MAIL"></p>
+                <button id="edit-profile-btn">Modifier le profil</button> 
+            </div>
             <!-- Formulaire pour éditer le profil -->
-            <button id="edit-profile-btn">Modifier le profil</button>
+            
             <form id="edit-profile-form" style="display: none;">
                 <p>Nom : </p>
                 <input type="text" id="edit-nom" placeholder="Nom">

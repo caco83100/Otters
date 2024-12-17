@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : mar. 17 déc. 2024 à 16:08
--- Version du serveur : 8.3.0
--- Version de PHP : 8.2.18
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 15, 2024 at 10:17 PM
+-- Server version: 8.3.0
+-- PHP Version: 8.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `otters`
+-- Database: `otters`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `animaux`
+-- Table structure for table `animaux`
 --
 
 DROP TABLE IF EXISTS `animaux`;
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `animaux` (
 ) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `animaux`
+-- Dumping data for table `animaux`
 --
 
 INSERT INTO `animaux` (`id_animal`, `name`) VALUES
@@ -111,7 +111,7 @@ INSERT INTO `animaux` (`id_animal`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `biomes`
+-- Table structure for table `biomes`
 --
 
 DROP TABLE IF EXISTS `biomes`;
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `biomes` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `biomes`
+-- Dumping data for table `biomes`
 --
 
 INSERT INTO `biomes` (`id_biome`, `name`, `color`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `biomes` (`id_biome`, `name`, `color`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `enclosure`
+-- Table structure for table `enclosure`
 --
 
 DROP TABLE IF EXISTS `enclosure`;
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `enclosure` (
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `enclosure`
+-- Dumping data for table `enclosure`
 --
 
 INSERT INTO `enclosure` (`id_enclosure`, `id_biome`, `meal`, `travaux`) VALUES
@@ -210,7 +210,7 @@ INSERT INTO `enclosure` (`id_enclosure`, `id_biome`, `meal`, `travaux`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `enclosure_animals`
+-- Table structure for table `enclosure_animals`
 --
 
 DROP TABLE IF EXISTS `enclosure_animals`;
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `enclosure_animals` (
 ) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `enclosure_animals`
+-- Dumping data for table `enclosure_animals`
 --
 
 INSERT INTO `enclosure_animals` (`id`, `id_enclosure`, `id_animal`) VALUES
@@ -300,7 +300,7 @@ INSERT INTO `enclosure_animals` (`id`, `id_enclosure`, `id_animal`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `geo_animals`
+-- Table structure for table `geo_animals`
 --
 
 DROP TABLE IF EXISTS `geo_animals`;
@@ -315,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `geo_animals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `geo_animals`
+-- Dumping data for table `geo_animals`
 --
 
 INSERT INTO `geo_animals` (`animalId`, `posX`, `posY`, `pathX`, `pathY`) VALUES
@@ -390,7 +390,7 @@ INSERT INTO `geo_animals` (`animalId`, `posX`, `posY`, `pathX`, `pathY`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `geo_path`
+-- Table structure for table `geo_path`
 --
 
 DROP TABLE IF EXISTS `geo_path`;
@@ -409,7 +409,7 @@ CREATE TABLE IF NOT EXISTS `geo_path` (
 ) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `geo_path`
+-- Dumping data for table `geo_path`
 --
 
 INSERT INTO `geo_path` (`pathId`, `startX`, `startY`, `endX`, `endY`, `path`, `length`) VALUES
@@ -520,80 +520,20 @@ INSERT INTO `geo_path` (`pathId`, `startX`, `startY`, `endX`, `endY`, `path`, `l
 -- --------------------------------------------------------
 
 --
--- Structure de la table `services`
+-- Table structure for table `services`
 --
 
 DROP TABLE IF EXISTS `services`;
 CREATE TABLE IF NOT EXISTS `services` (
-  `id_service` int NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `type` text NOT NULL,
-  PRIMARY KEY (`id_service`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `services`
---
-
-INSERT INTO `services` (`id_service`, `name`, `type`) VALUES
-(1, 'Toilettes', 'Sanitaires'),
-(2, 'Point d\'eau', 'Sanitaires'),
-(3, 'Boutique', 'Boutiques'),
-(4, 'Gare', 'Gares'),
-(5, 'Lodge', 'Évènements'),
-(6, 'Tente pédagogique', 'Activités'),
-(7, 'Paillote', 'Restauration'),
-(8, 'Café nomade', 'Restauration'),
-(9, 'Petit café', 'Restauration'),
-(10, 'Plateau des jeux', 'Activités'),
-(11, 'Espace Pique-nique', 'Restauration'),
-(12, 'Point de vue', 'Activités'),
-(13, 'Restaurant du Parc', 'Restauration');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `service_biomes`
---
-
-DROP TABLE IF EXISTS `service_biomes`;
-CREATE TABLE IF NOT EXISTS `service_biomes` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `id_biome` int NOT NULL,
   `id_service` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `service_biomes`
---
-
-INSERT INTO `service_biomes` (`id`, `id_biome`, `id_service`) VALUES
-(1, 1, 12),
-(2, 2, 1),
-(3, 2, 2),
-(4, 2, 4),
-(5, 2, 5),
-(6, 2, 6),
-(7, 2, 7),
-(8, 2, 11),
-(9, 2, 12),
-(10, 3, 1),
-(11, 3, 2),
-(12, 3, 12),
-(13, 5, 2),
-(14, 5, 4),
-(15, 5, 8),
-(16, 5, 11),
-(17, 6, 1),
-(18, 6, 3),
-(19, 6, 7),
-(20, 6, 13);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -609,17 +549,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `PP` int NOT NULL DEFAULT '1',
   `role` varchar(50) DEFAULT 'user',
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`Id`, `NOM`, `PRENOM`, `DATE`, `PSEUDO`, `MAIL`, `MDP`, `NL`, `PP`, `role`) VALUES
 (15, 'zinvzs', 'visevnis', '20/02/2004', 'TEST', 'test@gmail.com', '$2y$10$n/QVm5cdToqdvuBYFKULn.K94jfW4ryOaACD.axjmU2.lEdm4/IGq', 0, 1, 'user'),
-(17, 'MORATILLE', 'Marco', '', 'Caco', 'caco83100@gmail.com', '$2y$10$H9isn41WONtN6GKWv1VLZOPg8zyXFo4z6bXC6s8FAVlxQWMOWMtFu', 1, 3, 'admin'),
-(18, 'RIBERO', 'Lucie', '00/00/0000', 'Lulu', 'lulu@gmail.com', '$2y$10$aypus.M43KUugd49C3uRYOohBc501xsmBCrAB0VIT7PBQ1WJhillW', 0, 1, 'admin'),
-(19, 'NASSIET', 'Anne-Amélie', '2003-09-20', 'Lamamélie', 'lamamelie@gmail.com', '$2y$10$VIBDf32jDhl6jhdQ77z05OV3NzDlvLy8Qx/yqsJjcvY6f.Azuu.Nu', 0, 1, 'admin');
+(17, 'MORATILLE', 'Marco', '20/02/2004', 'Caco', 'caco83100@gmail.com', '$2y$10$H9isn41WONtN6GKWv1VLZOPg8zyXFo4z6bXC6s8FAVlxQWMOWMtFu', 1, 1, 'admin'),
+(18, 'RIBERO', 'Lucie', '00/00/0000', 'Lulu', 'lulu@gmail.com', '$2y$10$aypus.M43KUugd49C3uRYOohBc501xsmBCrAB0VIT7PBQ1WJhillW', 0, 1, 'admin');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

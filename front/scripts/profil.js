@@ -101,6 +101,7 @@ function setupPpSelection() {
 // Fonction pour annuler l'édition et fermer le formulaire
 function cancelEdit() {
     document.getElementById("edit-profile-form").style.display = "none";
+    document.getElementById("profile-form").style.display="block";
     alert("Modifications annulées.");
 }
 
@@ -111,6 +112,7 @@ async function init() {
     // Ajouter l'événement pour le bouton d'édition
     document.getElementById("edit-profile-btn").addEventListener("click", () => {
         document.getElementById("edit-profile-form").style.display = "block";
+        document.getElementById("profile-form").style.display="none";
     });
 
     // Ajouter l'événement pour le bouton de sauvegarde
