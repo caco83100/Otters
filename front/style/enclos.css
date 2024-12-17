@@ -299,8 +299,3 @@ circle.selected {
 	fill-opacity: 0.5;
 	stroke-width: 2;
 }
-
-footer{
-	position:absolute;
-	bottom:0;
-}
