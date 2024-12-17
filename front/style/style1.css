@@ -361,6 +361,8 @@ section {
     padding:30px 40px;
     margin-bottom: 30px;
     margin-top:60px;
+    text-align: center;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
 .wrapper2{
@@ -538,14 +540,13 @@ footer {
 .profile-dropdown {
     position: relative;
     display: inline-block;
-    width: fit-content;
 }
 
 .profile-dropdown-btn {
     display: flex;
     align-items: center;
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: #13ad13;
     border: 1px solid #007812;
     border-radius: 30px;
@@ -568,16 +569,15 @@ footer {
     justify-content: center;
 }
 
-.profile-img i {
-    font-size: 18px;
-    color: black;
+#profile-button-pp{
+    border-radius: 50%;
 }
 
 .profile-dropdown-btn:hover {
     background-color: #007812;
 }
 
-.profile-dropdown-list {
+.profile-dropdown-list{
     display: none;
     position: absolute;
     top: 100%;
@@ -597,12 +597,13 @@ footer {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.profile-dropdown-list li a {
-    text-decoration: none;
+.profile-dropdown-list li a,
+.profile-dropdown-list li button {
+    all:unset;
     color:black;
     opacity:1;
-    display: block;
-    font-size: 1.5rem;
+    display: flex;
+    font-size: 1rem;
 }
 
 .profile-dropdown-list li:hover {
@@ -613,6 +614,11 @@ footer {
     display: block;
 }
 
+#PP{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+}
 
 /* Conteneur principal des fiches */
 .animal-cards-container {
