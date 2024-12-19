@@ -844,6 +844,24 @@ label{
     display:none;
 }
 
+.search-result-button{
+    display:inline-block; 
+    margin: 10px auto;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-result-button:hover {
+    background-color: #007812;
+  }
+
 /* BILLETERIE */
 
 /* Style pour chaque ligne de choix de billet */
