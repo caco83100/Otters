@@ -17,6 +17,7 @@ async function getServices() {
   console.error("Erreur lors de la récupération des données :", error);
   }
 }
+
 const services=getServices();
 
 document.addEventListener("DOMContentLoaded", function () {
