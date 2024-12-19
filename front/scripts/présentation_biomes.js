@@ -198,6 +198,7 @@ function displayPopup(enclosure, popupContent) {
             <div id="commentDisplay"></div>
         </div>
     `;
+    loadComments(enclosure.id_enclosure);
 
     // Script étoiles
     let selectedStars = 0;
@@ -229,38 +230,86 @@ function displayPopup(enclosure, popupContent) {
     });
 
     // Ajouter la gestion du formulaire de commentaire
-    document.querySelector('.submit-btn').addEventListener('click', (e) => {
-        e.preventDefault(); // Empêche le rechargement de la page
+   // Dans la fonction displayPopup, modifiez l'événement submit :
+document.querySelector('.submit-btn').addEventListener('click', async (e) => {
+    e.preventDefault();
 
-        const username = document.getElementById("username").value.trim();
-        const rating = selectedStars; // La note sélectionnée
-        const comment = document.getElementById("comment").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const rating = selectedStars;
+    const comment = document.getElementById("comment").value.trim();
+    const enclosureId = enclosure.id_enclosure;
 
-        if (username && rating && comment) {
-            // Créer un nouvel élément pour afficher le commentaire
+    if (username && rating && comment) {
+        try {
+            const response = await fetch('../../back/commentaire.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id_enclosure: enclosureId,
+                    username: username,
+                    rating: rating,
+                    comment: comment
+                })
+            });
+
+            if (response.ok) {
+                // Recharger les commentaires
+                loadComments(enclosureId);
+
+                // Réinitialiser le formulaire
+                document.getElementById("username").value = "";
+                document.getElementById("comment").value = "";
+                document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
+            } else {
+                alert("Erreur lors de l'enregistrement du commentaire");
+            }
+        } catch (error) {
+            console.error("Erreur:", error);
+            alert("Erreur lors de l'enregistrement du commentaire");
+        }
+    } else {
+        alert("Veuillez remplir tous les champs !");
+    }
+});
+}
+
+// Fonction de chargement des commentaires modifiée
+async function loadComments(enclosureId) {
+    const commentDisplay = document.getElementById("commentDisplay");
+    
+    try {
+        const response = await fetch(`../../back/commentaire.php?id_enclosure=${enclosureId}`);
+        const data = await response.json();
+
+        if (data.success) {
+
+            data.comments.forEach(comment => {
+                console.log(comment);
+
             const commentDisplay = document.getElementById("commentDisplay");
 
             const commentElement = document.createElement("div");
             commentElement.classList.add("user-comment");
 
             commentElement.innerHTML = `
-                <div class="comment-box">
-                    <h4>${username} - ${rating} étoiles</h4>
-                    <p>${comment}</p>
-                </div>
+                <h4>${comment.pseudo} - ${comment.note} étoiles</h4>
+                <p>${comment.commentaire}</p>
             `;
 
             commentDisplay.appendChild(commentElement);
+            });
 
-            // Réinitialiser le formulaire
-            document.getElementById("username").value = "";
-            document.getElementById("comment").value = "";
-            document.querySelectorAll('.star').forEach((s) => s.classList.remove('selected'));
         } else {
-            alert("Veuillez remplir tous les champs !");
+            commentDisplay.innerHTML = '<p class="error">Erreur lors du chargement des commentaires.</p>';
         }
-    });
+    } catch (error) {
+        console.error("Erreur lors du chargement des commentaires:", error);
+        commentDisplay.innerHTML = '<p class="error">Erreur lors du chargement des commentaires.</p>';
+    }
 }
+
 
 function findEnclosureById(data, id) {
     for (const biomeKey in data) {

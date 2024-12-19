@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 19 déc. 2024 à 20:55
+-- Généré le : jeu. 19 déc. 2024 à 19:20
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -134,29 +134,6 @@ INSERT INTO `biomes` (`id_biome`, `name`, `color`) VALUES
 (4, 'Le Bois des Pins', 'rgba(196,205,174,0.8)'),
 (5, 'Le Vallon des Cascades', 'rgba(175,193,205,0.8)'),
 (6, 'La Bergerie des Reptiles', 'rgba(179,209,197,0.8)');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `comments`
---
-
-DROP TABLE IF EXISTS `comments`;
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id_comment` int NOT NULL AUTO_INCREMENT,
-  `id_enclosure` int NOT NULL,
-  `pseudo` varchar(50) NOT NULL,
-  `note` int NOT NULL,
-  `commentaire` text NOT NULL,
-  PRIMARY KEY (`id_comment`)
-) ;
-
---
--- Déchargement des données de la table `comments`
---
-
-INSERT INTO `comments` (`id_comment`, `id_enclosure`, `pseudo`, `note`, `commentaire`) VALUES
-(1, 4, 'caco', 4, 'test');
 
 -- --------------------------------------------------------
 
