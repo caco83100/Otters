@@ -114,6 +114,8 @@ function displayPopup(enclosure, popupContent) {
     const animals = enclosure.animals || [];
     console.log(enclosure);
     console.log(animals);
+    const pseudo=getName();
+
     let travauxTxt = 'Enclos accessible';
     if (enclosure.travaux == 1) {
         travauxTxt = 'Enclos en travaux';
@@ -167,7 +169,7 @@ function displayPopup(enclosure, popupContent) {
             <br>
             <form id="commentForm" class="comment-form">
                 <label for="username">Nom d'utilisateur :</label>
-                <input type="text" id="username" required placeholder="Entrez votre nom..." /><br><br>
+                <input type="text" id="username" value="${pseudo}" required placeholder="Entrez votre nom..." /><br><br>
 
                 <label for="rating">Évaluation (de 1 à 5 étoiles) :</label>
                 <div id="rating" class="stars">
@@ -418,6 +420,25 @@ async function setupSearch() {
         const query = e.target.value;
         filterAnimals(query);
     });
+}
+function getName(){
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.log("Pas de token, donc l'utilisateur n'est pas connecté");
+        return '';
+    }
+
+    // Décoder le token (le décodage n'affecte pas la sécurité, car il ne le vérifie pas)
+    const payload = JSON.parse(atob(token.split('.')[1]));  // Décoder le payload (partie du milieu du JWT)
+    
+
+    if (payload.prenom != null) {
+        console.log(`Tu es ${payload.prenom}`);
+        return payload.prenom;
+    }else{
+        return '';
+    }
 }
 
 async function init() {
