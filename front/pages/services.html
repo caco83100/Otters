@@ -41,89 +41,57 @@
 
     <body>
         <div class="wrappedS">
-            <h2> Les Services du Parc</h2>
+            <h2>Les Services du Parc</h2>
 
             <div class="animal-cards-container">
                 <div class="containerS">
-                    <!-- Colonne de gauche -->
                     <div class="left">
-                        <div class="boxS" data-service="gare">
-                            <div class="box-headerS"><img src="../../assets/logos/gare.png" alt="Logo de la gare" class="icon">La Gare</div>
-                            <p>En famille ou entre amis, le petit train permet de rejoindre le cœur du parc facilement et agréablement (attention, il ne fonctionne que les samedis, dimanches, jours fériés et durant les vacances scolaires).  </p></div>
-
-                        <div class="boxS" data-service="cafe-nomade">
-                            <div class="box-headerS"><img src="../../assets/logos/cafe-nomade.png" alt="Café Nomade" class="icon"> Le café Nomade</div>
-                            <p class="centered"> Pour une pause gourmande ou un repas rapide, le Café Nomade est l’adresse idéale ! Nichée dans un cadre convivial, moderne et chaleureux, cette escale culinaire propose une variété de délices pour petits et grands voyageurs. Que vous soyez en quête d’un petit plaisir ou d’un vrai festin, le Café Nomade saura répondre à toutes vos envies ! </p>
-
-                        </div>
-                    </div>
-            
-                    <!-- Colonne du milieu -->
-                    <div class="middle">
                         <div class="boxS map" data-service="map">
                             <div class="box-headerS">Le plan pour bien se repérer</div>
-                            <img src="../../assets/plan-du-parc.png" alt="Plan du Zoo">
+                            <div class="imap-container">
+                                <img src="../../assets/plan-du-parc.png" alt="Plan du Zoo">
+                            </div>
                         </div>
 
                         <div class="boxS map" data-service="adresse">
                             <div class="box-headerS">L'adresse</div>
-                            <p> Route du Château, 13330 La Barben, France </p>
+                            <p>Route du Château, 13330 La Barben, France</p>
                         </div>
 
-                        <div class="boxS" data-service="Aires-picnic">
-                            <div class="box-headerS"><img src="../../assets/logos/picnic.png" alt="Logo picnic" class="icon">Aires de Picnic</div>
-                            <p>Envie de profiter d’un repas en plein air ? Des aires de pique-nique ombragées sont à votre disposition au cœur du zoo, pour une pause conviviale au plus près de la nature !</p>
-                        </div>
-
+                    
                     </div>
-            
-                    <!-- Colonne de droite -->
-                    <div class="right">
-                        <div class="boxS" data-service="billeterie">
-                            <div class="box-headerS">Billeterie</div>
-                            <<a href="billeterie.html" class="info">PRENEZ VOS BILLETS</a>>
-                        </div>
 
-                        <div class="boxS" data-service="petit-cafe">
-                            <div class="box-headerS"><img src="../../assets/logos/petit-cafe.png" alt="Petit café" class="icon"> Le petit café</div>
-                            <p class="centered">Situé en face de l’entrée, le Bistrot vous accueille sur sa terrasse ombragée sous la cascade. Il propose une cuisine maison avec des produits locaux et de saison, ainsi qu’une pause goûter gourmande. Ouvert du mercredi au dimanche, de 10h à 18h.</p>
-                        </div>
-                        <div class="boxS" data-service="paillote">
-                            <div class="box-headerS"><img src="../../assets/logos/paillote.png" alt="Paillote" class="icon"> Paillote</div>
-                            <p class="centered">Pour une petite faim ou un grand creux, la “Paillote” saura vous satisfaire !  
-                                Au cœur du parc, sous une terrasse ombragée, une sélection pour tous : crêpes, frites, steaks, nuggets, sandwiches, salades, glaces, gaufres… </p>
-                        </div>
-            
-                        
+                    <div class="right">
+                        <div id="services-container"></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <script src="../scripts/présentation_service.js"></script>
+
         <div id="popup" class="popup">
             <div class="popup-content">
-              <span class="close-btn">&times;</span>
-              <img id="popup-image" src="" alt="Image pour le service" />
-              <p id="popup-text">Texte par défaut de la pop-up</p>
+                <span class="close-btn">&times;</span>
+                <img id="popup-image" src="" alt="Image pour le service" />
+                <p id="popup-text">Texte par défaut de la pop-up</p>
             </div>
         </div>
-        
-       
 
     </body>
+
     <footer>
         <div class="footer">
             <p>&copy; 2024 Zoo de la Barben. Tous droits réservés.</p>
             <div class="social-links">
                 <a href="#facebook">
-                    <img src="../../assets/logos/facebook.png">
+                    <img src="../../assets/logos/facebook.png" alt="Facebook">
                 </a>
                 <a href="#x">
-                    <img src="../../assets/logos/X-Logo.png">
+                    <img src="../../assets/logos/X-Logo.png" alt="Twitter">
                 </a>
                 <a href="#instagram">
-                    <img src="../../assets/logos/Instagram-Logo.png">
+                    <img src="../../assets/logos/Instagram-Logo.png" alt="Instagram">
                 </a>
             </div>
         </div>
