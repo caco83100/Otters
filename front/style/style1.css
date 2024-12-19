@@ -889,6 +889,7 @@ label{
   .containerS {
     display: grid !important;
     grid-template-columns: 2fr 1fr !important;
+    gap: 20px;
 }
 .left {
     min-width: 200px;
