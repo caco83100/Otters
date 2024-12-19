@@ -683,23 +683,23 @@ label{
     width: 75%;
 }
 
-.comment-box {
-    background-color: rgba(255, 255, 255, 0.7);
+
+.user-comment {
+    background-color: rgba(255, 255, 255, 0.7) !important;
     padding: 15px;
     margin-top: 20px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    
 }
 
-.comment-box h4 {
+.user-comment h4 {
     margin: 0;
     font-size: 1.2em;
     color: #ffffff;  /* Texte en noir */
 }
 
-.comment-box p {
+.user-comment p {
     margin-top: 5px;
     font-size: 1em;
     color: #000;  /* Texte du commentaire en noir */
@@ -713,6 +713,11 @@ label{
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:hover {
+    background-color: #377239;
+    transform: scale(1.1);
 }
 
 /* NOS ENCLOS : RECHERCHE ET TYPES DE BOUTONS UTILISES */
