@@ -1,3 +1,4 @@
+
 console.log("Script biome-popup chargé !");
 
 async function fetchAndDisplay() {
@@ -121,16 +122,20 @@ function displayPopup(enclosure, popupContent) {
         travauxTxt = 'Enclos en travaux';
     }
     popupContent.innerHTML = `
-        <h2>Enclos ID : ${enclosure.id_enclosure}</h2>
+        <!--<h2>Enclos ID : ${enclosure.id_enclosure}</h2>-->
+        <h2>Animaux présents dans cet enclos :</h2>
+        <br>
         <ul>
-            ${animals.map((animal) => `<li>${animal}</li>`).join('')}
+        <label>${animals.map((animal) => `<li>${animal}</li>`).join('')}</label>
         </ul>
-        <p>Heure de repas: ${enclosure.meal}</p>
-        <p>${travauxTxt}</p>
+        <br>
+        <label>Heure de repas: ${enclosure.meal}</label>
+        <br>
+        <label>${travauxTxt}</label>
+        <br>
         
         <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">
-            <h1>Le Belvédère</h1>
             
             <!-- Swiper container principal -->
             <div class="swiper mySwiper">
@@ -151,6 +156,7 @@ function displayPopup(enclosure, popupContent) {
         
         <div class="comment-section">
             <h3>Laissez un commentaire :</h3>
+            <br>
             <form id="commentForm" class="comment-form">
                 <label for="username">Nom d'utilisateur :</label>
                 <input type="text" id="username" required placeholder="Entrez votre nom..." /><br><br>
@@ -162,7 +168,7 @@ function displayPopup(enclosure, popupContent) {
                     <span class="star" data-value="3">&#9733;</span>
                     <span class="star" data-value="4">&#9733;</span>
                     <span class="star" data-value="5">&#9733;</span>
-                </div><br><br>
+                </div><br>
 
                 <label for="comment">Votre commentaire :</label><br>
                 <textarea id="comment" class="comment-box" rows="4" placeholder="Écrivez votre commentaire ici..." required></textarea><br><br>

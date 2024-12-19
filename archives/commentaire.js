@@ -66,5 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("Bouton de soumission introuvable !");
     }
 });
+
 const submitButton = document.querySelector('.submit-btn');
 console.log(submitButton); // Cela doit afficher l'élément bouton dans la console
