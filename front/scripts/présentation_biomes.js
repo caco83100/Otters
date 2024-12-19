@@ -118,10 +118,13 @@ function displayPopup(enclosure, popupContent) {
     if (enclosure.travaux == 1) {
         travauxTxt = 'Enclos en travaux';
     }
+
+    // Définir comments avant d'utiliser le template HTML
+    const comments = enclosure.comments || [];
+
     popupContent.innerHTML = `
     <h2>Animaux présents dans cet enclos :</h2>
     <br>
-        <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">
             
             <!-- Swiper container principal -->
@@ -159,6 +162,7 @@ function displayPopup(enclosure, popupContent) {
         <br><br>
         <hr>
         <div class="comment-section">
+        <br>
             <h3>Laissez un commentaire :</h3>
             <br>
             <form id="commentForm" class="comment-form">
@@ -179,9 +183,20 @@ function displayPopup(enclosure, popupContent) {
 
                 <button type="button" class="submit-btn">Soumettre</button>
             </form>
+
+            <div class="existing-comments">
+            <br>
+                <h3>Commentaires :</h3>
+                ${comments.length > 0 ? comments.map(comment => `
+                    <div class="comment-box">
+                        <h4>${comment.username} - ${comment.rating} étoiles</h4>
+                        <p>${comment.text}</p>
+                    </div>`).join('') 
+                : ''}
+            </div>
+
             <div id="commentDisplay"></div>
         </div>
-        <script src="commentaire.js"></script>
     `;
     loadComments(enclosure.id_enclosure);
 
@@ -355,30 +370,39 @@ async function setupSearch() {
         displaySearchResults(filteredResults);
     }
 
-    // Afficher les résultats dans un nouveau div
-    function displaySearchResults(results) {
-        searchResultsContainer.innerHTML = ''; // Vider les résultats précédents
+   function displaySearchResults(results) {
+    searchResultsContainer.innerHTML = ''; // Vider les résultats précédents
 
-        if (results.length === 0) {
-            searchResultsContainer.innerHTML = '<label>Aucun résultat trouvé.</label>';
-            return;
-        }
-
-        results.forEach(result => {
-            const resultItem = document.createElement('div');
-            resultItem.classList.add('search-result');
-            resultItem.innerHTML = `
-                <h3>${result.animal.name}</h3>
-                <label>Biome : ${result.biome.biome_name}</label><br>
-            `;
-
-            resultItem.addEventListener('click', () => {
-                openPopupForEnclosure(result.enclosure); // Ouvre le popup du résultat
-            });
-
-            searchResultsContainer.appendChild(resultItem);
-        });
+    if (results.length === 0) {
+        searchResultsContainer.innerHTML = '<label>Aucun résultat trouvé.</label>';
+        return;
     }
+
+    // Ajouter le titre "Suggestions de résultats"
+    const title = document.createElement('h3');
+    title.textContent = 'Suggestions de résultats';
+    searchResultsContainer.appendChild(title); 
+
+    results.forEach((result, index) => {
+        // Créer un bouton pour chaque résultat
+        const resultButton = document.createElement('button');
+        resultButton.id = `btn-recherche-${index}`;
+        resultButton.classList.add('search-result-button');
+        resultButton.innerHTML = `
+            <h3>${result.animal.name}</h3>
+            <label>Biome : ${result.biome.biome_name}</label><br>
+        `;
+
+        // Ajouter un gestionnaire d'événement au clic sur le bouton
+        resultButton.addEventListener('click', () => {
+            openPopupForEnclosure(result.enclosure); // Ouvre le popup du résultat
+        });
+
+        // Ajouter le bouton au conteneur de résultats
+        searchResultsContainer.appendChild(resultButton);
+    });
+}
+
 
     // Ouvrir le popup avec swiper et commentaires
     function openPopupForEnclosure(enclosure) {
