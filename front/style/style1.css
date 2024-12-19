@@ -131,7 +131,7 @@ section {
   }
   
 
-  .img.dessus {
+.img.dessus {
     position: absolute;
     top: 32%;
     left: -30%; 
@@ -140,9 +140,9 @@ section {
     height: auto;
     z-index: 2; 
     opacity: 0.9; 
-  }
+}
 
-  .img.dessus2 {
+.img.dessus2 {
     position: absolute;
     top: 32%; 
     right: -30%; 
@@ -151,21 +151,21 @@ section {
     height: auto;
     z-index: 2; 
     opacity: 0.9; 
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .img.dessus {
       width: 40%; /* Taille plus petite pour la deuxième image */
       left: -15%; /* Ajustement de position */
     }
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .img.dessus {
       width: 50%; /* Encore plus petite pour s'adapter aux écrans mobiles */
       left: -10%; 
     }
-  }
+}
 
 /* STYLES IMAGES ACCUEIL */
 
