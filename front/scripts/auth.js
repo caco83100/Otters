@@ -46,7 +46,7 @@ document.getElementById("login-form").addEventListener("submit", (e) => {
             window.location.href = "../pages/accueil_zoo.html";
         },
         (errorMessage) => {
-            document.getElementById("error-message").textContent = errorMessage;
+            alert(errorMessage);
         }
     );
 });
@@ -64,7 +64,6 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
             document.getElementById("toggle-to-login").click();
         },
         (errorMessage) => {
-            document.getElementById("error-message").textContent = errorMessage;
-        }
-    );
+            alert(errorMessage);
+    });
 });
