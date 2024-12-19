@@ -65,5 +65,5 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
         },
         (errorMessage) => {
             alert(errorMessage);
-    );
+    });
 });
