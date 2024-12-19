@@ -870,6 +870,7 @@ label{
     transition: background-color 0.3s ease;
     margin-top: 2%;
     margin-bottom: 2%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
   
   .btnB:hover {
