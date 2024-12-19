@@ -110,7 +110,7 @@ async function init() {
     await getUser();
 
     // Ajouter l'événement pour le bouton d'édition
-    document.getElementById("edit-profile-btn").addEventListener("click", () => {
+    document.getElementById("submit-btn").addEventListener("click", () => {
         document.getElementById("edit-profile-form").style.display = "block";
         document.getElementById("profile-form").style.display="none";
     });

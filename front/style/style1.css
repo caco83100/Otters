@@ -524,10 +524,11 @@ footer {
 #result {
     margin-top: 20px;
     padding: 10px;
-    border: 1px solid #986b2b;
+    border: 1px;
     border-radius: 5px;
-    background-color: #986b2b;
+    background-color: transparent;
 }
+
 .warning {
     color: red;
     font-weight: bold;
@@ -758,6 +759,7 @@ footer {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
 .submit-btn {
     background-color: #4CAF50;
     color: white;
@@ -766,6 +768,39 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
+
+#submit-btn {
+    background-color: #643500;
+    color: white;
+    padding: 10px 20px;
+    font-size:12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-btn2 {
+    background-color: #643500;
+    color: white;
+    padding: 10px 20px;
+    font-size:12px;
+    border: none;
+    box-shadow: #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#zooForm {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+label{
+    color:white;
+    text-shadow: 2px 2px 3px black;
+}
+
 .comment-display {
     margin-top: 20px;
 }  
@@ -1012,8 +1047,6 @@ footer {
     margin: 0;
     position: relative;
 }
-  
-  
   circle {
       fill: lawngreen;
       fill-opacity: 0;
@@ -1049,9 +1082,10 @@ footer {
     transform: scale(1.1); /* Légère augmentation de taille */
 }
   
-.search-bar {
+.search-bar{
     width: 400px; 
     height: 50px;
     font-size: 16px; 
     padding: 5px; 
-}
+    border-radius: 15px;
+}     

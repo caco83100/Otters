@@ -69,12 +69,15 @@ document.getElementById('zooForm').addEventListener('submit', function (event) {
         const animalNames = Object.keys(enclosInfo.animals).map(id => enclosInfo.animals[id]).join(', ');
         resultDiv.innerHTML = `
             <h2>Détails de l'enclos ${selectedEnclos}</h2>
-            <p><strong>Animaux présents :</strong> ${animalNames}</p>
-            <p><strong>État des travaux :</strong> ${enclosInfo.travaux ? '<span class="warning">En travaux</span>' : 'Accessible'}</p>
-            <p><strong>Heure du déjeuner :</strong> ${enclosInfo.meal || 'Non défini'}</p>
-            <button id="editButton">Modifier</button>
+            <label><strong>Animaux présents :</strong> ${animalNames}</label>
+            <br>
+            <label><strong>État des travaux :</strong> ${enclosInfo.travaux ? '<span class="warning">En travaux</span>' : 'Accessible'}</label>
+            <br>
+            <label><strong>Heure du déjeuner :</strong> ${enclosInfo.meal || 'Non défini'}</label>
+            <br>
+            <button id="submit-btn">Modifier</button>
         `;
-        document.getElementById('editButton').addEventListener('click', openEditForm);
+        document.getElementById('submit-btn').addEventListener('click', openEditForm);
     }
 });
 

@@ -1,86 +1,83 @@
 console.log("Script biome-popup chargé !");
 
 async function fetchAndDisplay() {
+    try {
+        // fetch data from back
+        const result = await fetch("../../back/biome.php");
 
-try {
-    // fetch data from back
-    const result = await fetch("../../back/biome.php");
-    
-    if (!result.ok) {
-      throw new Error(`Erreur HTTP : ${result.status}`);
+        if (!result.ok) {
+            throw new Error(`Erreur HTTP : ${result.status}`);
+        }
+        const data = await result.json();
+
+        // the container for all biomes sections
+        const container = document.getElementById("container");
+        // run through biomes
+        Object.values(data).forEach((biome) => {
+
+            // creation of one biome section
+            const biomeSection = document.createElement("div");
+            biomeSection.classList.add("wrapper2");
+            biomeSection.style.backgroundColor = biome.biome_color;
+
+            const biomeTitle = document.createElement("h2");
+            const biomeSpace = document.createElement("br");
+            biomeTitle.textContent = `${biome.biome_name}`;
+            biomeSection.appendChild(biomeTitle);
+            biomeSection.appendChild(biomeSpace);
+
+            // run through enclosure
+            const grid = document.createElement("div");
+            grid.classList.add("cards");
+            Object.values(biome).forEach((enclosure) => {
+                if (enclosure.animals && enclosure.animals.length > 0) {
+                    // Création de la section pour un enclos
+                    const enclosureSection = document.createElement("div");
+                    enclosureSection.classList.add("card");
+                    enclosureSection.setAttribute("data-enclos", enclosure.id_enclosure);
+
+                    // Image du premier animal
+                    const firstAnimal = enclosure.animals[0];
+                    const animalImage = document.createElement("img");
+                    animalImage.src = `../../assets/animaux/${firstAnimal}.jpg`;
+                    animalImage.alt = firstAnimal;
+
+                    enclosureSection.appendChild(animalImage);
+
+                    // Ajout à la section du biome si l'enclosureSection existe
+                    if (enclosureSection) {
+                        grid.appendChild(enclosureSection);
+                    }
+                }
+            });
+            biomeSection.appendChild(grid);
+            container.appendChild(biomeSection);
+        });
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+        const container = document.getElementById("container");
+        if (container) {
+            container.textContent = "Erreur lors du chargement des données.";
+        } else {
+            console.error("Le conteneur pour afficher les données est introuvable.");
+        }
     }
-    const data =await result.json();
-
-    // the container for all biomes sections
-    const container = document.getElementById("container");
-    // run through biomes
-    Object.values(data).forEach((biome)=>{
-
-        // creation of one biome section
-        const biomeSection = document.createElement("div");
-        biomeSection.classList.add("wrapper2");
-        biomeSection.style.backgroundColor = biome.biome_color;
-
-        const biomeTitle = document.createElement("h2");
-        const biomeSpace = document.createElement("br");
-        biomeTitle.textContent = `${biome.biome_name}`;
-        biomeSection.appendChild(biomeTitle);
-        biomeSection.appendChild(biomeSpace);
-        
-
-        // run through enclosure
-        const grid = document.createElement("div");
-        grid.classList.add("cards");
-        Object.values(biome).forEach((enclosure) => {
-            if (enclosure.animals && enclosure.animals.length > 0) {
-              // Création de la section pour un enclos
-              const enclosureSection = document.createElement("div");
-              enclosureSection.classList.add("card");
-              enclosureSection.setAttribute("data-enclos",enclosure.id_enclosure)
-          
-              // Image du premier animal
-              const firstAnimal = enclosure.animals[0];
-              const animalImage = document.createElement("img");
-              animalImage.src = `../../assets/animaux/${firstAnimal}.jpg`;
-              animalImage.alt = firstAnimal;
-          
-              enclosureSection.appendChild(animalImage);
-          
-              // Ajout à la section du biome si l'enclosureSection existe
-              if (enclosureSection) {
-                grid.appendChild(enclosureSection)
-              }
-            }
-          });
-        biomeSection.appendChild(grid);
-        container.appendChild(biomeSection);
-
-    });
-} catch (error) {
-    console.error("Erreur lors de la récupération des données :", error);
-    const container = document.getElementById("container");
-    if (container) {
-        container.textContent = "Erreur lors du chargement des données.";
-    } else {
-        console.error("Le conteneur pour afficher les données est introuvable.");
-    }
-}
 }
 
 function popupBiome() {
     console.log("Partie popup !");
-    
+
     // Utilisation de querySelector pour une sélection plus flexible
     const popup = document.querySelector(".popup");
     const popupContent = document.querySelector(".popup-content");
     const closeBtn = document.querySelector(".close-btn");
     const boxes = document.querySelectorAll(".card");
-    
+
     if (!popup || !popupContent || !closeBtn) {
         console.error("Un ou plusieurs éléments de popup sont introuvables !");
         return; // Stoppe la fonction si un élément essentiel est manquant
     }
-    
+
     console.log("Boxes trouvées :", boxes.length);
 
     boxes.forEach((box) => {
@@ -115,18 +112,21 @@ function popupBiome() {
     });
 }
 
-
 function displayPopup(enclosure, popupContent) {
     const animals = enclosure.animals || [];
     console.log(enclosure);
     console.log(animals);
+    let travauxTxt = 'Enclos accessible';
+    if (enclosure.travaux == 1) {
+        travauxTxt = 'Enclos en travaux';
+    }
     popupContent.innerHTML = `
         <h2>Enclos ID : ${enclosure.id_enclosure}</h2>
         <ul>
             ${animals.map((animal) => `<li>${animal}</li>`).join('')}
         </ul>
         <p>Heure de repas: ${enclosure.meal}</p>
-        <p>Travaux: ${enclosure.travaux}</p>
+        <p>${travauxTxt}</p>
         
         <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">
@@ -135,7 +135,11 @@ function displayPopup(enclosure, popupContent) {
             <!-- Swiper container principal -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                ${animals.map((animal) => ` <div class="swiper-slide"><img src='../../assets/animaux/${animal}.jpg' alt='${animal}'><p>${animal}</p></div>`).join('')}
+                    ${animals.map((animal) => ` 
+                        <div class="swiper-slide">
+                            <img src='../../assets/animaux/${animal}.jpg' alt='${animal}'>
+                            <p>${animal}</p>
+                        </div>`).join('')}
                 </div>
 
                 <!-- Pagination et navigation -->
@@ -170,8 +174,7 @@ function displayPopup(enclosure, popupContent) {
         <script src="commentaire.js"></script>
     `;
 
-    //Script étoiles
-
+    // Script étoiles
     let selectedStars = 0;
     document.querySelectorAll('.star').forEach((star) => {
         star.addEventListener('click', () => {
@@ -182,29 +185,53 @@ function displayPopup(enclosure, popupContent) {
             }
         });
     });
-    //Script pour initialiser Swiper
 
+    // Script pour initialiser Swiper
     const swiper = new Swiper('.mySwiper', {
-      // Activer la boucle
-      loop: true,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    });
 
-      // Paramètres de navigation
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+    // Ajouter la gestion du formulaire de commentaire
+    document.querySelector('.submit-btn').addEventListener('click', (e) => {
+        e.preventDefault(); // Empêche le rechargement de la page
 
-      // Pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+        const username = document.getElementById("username").value.trim();
+        const rating = selectedStars; // La note sélectionnée
+        const comment = document.getElementById("comment").value.trim();
 
-      // Lecture automatique
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+        if (username && rating && comment) {
+            // Créer un nouvel élément pour afficher le commentaire
+            const commentDisplay = document.getElementById("commentDisplay");
+
+            const commentElement = document.createElement("div");
+            commentElement.classList.add("user-comment");
+
+            commentElement.innerHTML = `
+                <h4>${username} - ${rating} étoiles</h4>
+                <p>${comment}</p>
+            `;
+
+            commentDisplay.appendChild(commentElement);
+
+            // Réinitialiser le formulaire
+            document.getElementById("username").value = "";
+            document.getElementById("comment").value = "";
+            document.querySelectorAll('.star').forEach((s) => s.classList.remove('selected'));
+        } else {
+            alert("Veuillez remplir tous les champs !");
+        }
     });
 }
 
@@ -221,9 +248,101 @@ function findEnclosureById(data, id) {
     return null;
 }
 
+async function setupSearch() {
+    const searchBar = document.querySelector('.search-bar');
+    const suggestionsList = document.querySelector('.suggestions');
+    const searchResultsContainer = document.getElementById('searchResults');
+    
+    let data = []; // Pour stocker les données des biomes et des enclos
+    
+    // Récupérer les données au chargement de la page
+    try {
+        const result = await fetch("../../back/biome.php");
+        if (result.ok) {
+            data = await result.json();
+        } else {
+            console.error("Erreur lors de la récupération des données");
+        }
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+    }
+
+    // Fonction pour filtrer les animaux en fonction de la recherche
+    function filterAnimals(query) {
+        if (!query) {
+            searchResultsContainer.innerHTML = ''; // Si aucune recherche, on vide les résultats
+            return;
+        }
+
+        const filteredResults = [];
+        Object.values(data).forEach(biome => {
+            Object.values(biome).forEach(enclosure => {
+                if (enclosure.animals) {
+                    enclosure.animals.forEach(animal => {
+                        if (animal.toLowerCase().includes(query.toLowerCase())) {
+                            filteredResults.push({
+                                biome: biome,
+                                enclosure: enclosure,
+                                animal: animal
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+        // Affichage des résultats de recherche
+        displaySearchResults(filteredResults);
+    }
+
+    // Afficher les résultats dans un nouveau div
+    function displaySearchResults(results) {
+        searchResultsContainer.innerHTML = ''; // Vider les résultats précédents
+
+        if (results.length === 0) {
+            searchResultsContainer.innerHTML = '<p>Aucun résultat trouvé.</p>';
+            return;
+        }
+
+        results.forEach(result => {
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('search-result');
+            resultItem.innerHTML = `
+                <h3>${result.animal}</h3>
+                <p>Biome : ${result.biome.biome_name}</p>
+            `;
+
+            resultItem.addEventListener('click', () => {
+                openPopupForEnclosure(result.enclosure); // Ouvre le popup du résultat
+            });
+
+            searchResultsContainer.appendChild(resultItem);
+        });
+    }
+
+    // Ouvrir le popup avec swiper et commentaires
+    function openPopupForEnclosure(enclosure) {
+        const popup = document.querySelector(".popup");
+        const popupContent = document.querySelector(".popup-content");
+        
+        displayPopup(enclosure, popupContent); // Réutiliser la fonction displayPopup pour afficher les détails
+        popup.style.display = "flex"; // Afficher le popup
+    }
+
+    // Écouter les entrées de texte dans la barre de recherche
+    searchBar.addEventListener('input', (e) => {
+        const query = e.target.value;
+        filterAnimals(query);
+    });
+}
+
+
+
+
 async function init() {
     await fetchAndDisplay();
     popupBiome();
+    setupSearch();
 }
 
 init();
