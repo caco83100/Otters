@@ -1,9 +1,8 @@
-
 console.log("Script biome-popup chargé !");
 
 async function fetchAndDisplay() {
     try {
-        // fetch data from back
+        // Fetch data from back
         const result = await fetch("../../back/biome.php");
 
         if (!result.ok) {
@@ -11,12 +10,12 @@ async function fetchAndDisplay() {
         }
         const data = await result.json();
 
-        // the container for all biomes sections
+        // The container for all biomes sections
         const container = document.getElementById("container");
-        // run through biomes
+        // Run through biomes
         Object.values(data).forEach((biome) => {
 
-            // creation of one biome section
+            // Creation of one biome section
             const biomeSection = document.createElement("div");
             biomeSection.classList.add("wrapper2");
             biomeSection.style.backgroundColor = biome.biome_color;
@@ -27,28 +26,26 @@ async function fetchAndDisplay() {
             biomeSection.appendChild(biomeTitle);
             biomeSection.appendChild(biomeSpace);
 
-            // run through enclosure
+            // Run through enclosures
             const grid = document.createElement("div");
             grid.classList.add("cards");
-            Object.values(biome).forEach((enclosure) => {
+            biome.enclosures.forEach((enclosure) => {
                 if (enclosure.animals && enclosure.animals.length > 0) {
-                    // Création de la section pour un enclos
+                    // Creation of a section for one enclosure
                     const enclosureSection = document.createElement("div");
                     enclosureSection.classList.add("card");
                     enclosureSection.setAttribute("data-enclos", enclosure.id_enclosure);
 
-                    // Image du premier animal
-                    const firstAnimal = enclosure.animals[0];
+                    // Image of the first animal
+                    const firstAnimal = enclosure.animals[0].name;
                     const animalImage = document.createElement("img");
                     animalImage.src = `../../assets/animaux/${firstAnimal}.jpg`;
                     animalImage.alt = firstAnimal;
 
                     enclosureSection.appendChild(animalImage);
 
-                    // Ajout à la section du biome si l'enclosureSection existe
-                    if (enclosureSection) {
-                        grid.appendChild(enclosureSection);
-                    }
+                    // Add to biome section if enclosureSection exists
+                    grid.appendChild(enclosureSection);
                 }
             });
             biomeSection.appendChild(grid);
@@ -122,18 +119,7 @@ function displayPopup(enclosure, popupContent) {
         travauxTxt = 'Enclos en travaux';
     }
     popupContent.innerHTML = `
-        <!--<h2>Enclos ID : ${enclosure.id_enclosure}</h2>-->
-        <h2>Animaux présents dans cet enclos :</h2>
-        <br>
-        <ul>
-        <label>${animals.map((animal) => `<li>${animal}</li>`).join('')}</label>
-        </ul>
-        <br>
-        <label>Heure de repas: ${enclosure.meal}</label>
-        <br>
-        <label>${travauxTxt}</label>
-        <br>
-        
+    <h2>Animaux présents dans cet enclos :</h2>
         <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">
             
@@ -142,8 +128,8 @@ function displayPopup(enclosure, popupContent) {
                 <div class="swiper-wrapper">
                     ${animals.map((animal) => ` 
                         <div class="swiper-slide">
-                            <img src='../../assets/animaux/${animal}.jpg' alt='${animal}'>
-                            <p>${animal}</p>
+                            <img src='../../assets/animaux/${animal.name}.jpg' alt='${animal.name}'>
+                            <p>${animal.name}</p>
                         </div>`).join('')}
                 </div>
 
@@ -153,6 +139,23 @@ function displayPopup(enclosure, popupContent) {
                 <div class="swiper-button-prev"></div>
             </div>
         </div>
+
+        <!--<h2>Enclos ID : ${enclosure.id_enclosure}</h2>-->
+        
+        <br>
+        <ul>
+        <label>${animals.map((animal) => `
+            <li>
+                <strong>${animal.name}</strong>: ${animal.description}
+            </li>
+        `).join('')}
+        </label>
+        </ul>
+        <br>
+        <label>Heure de repas: ${enclosure.meal}</label>
+        <br>
+        <label>${travauxTxt}</label>
+        <br>
         
         <div class="comment-section">
             <h3>Laissez un commentaire :</h3>
@@ -244,8 +247,7 @@ function displayPopup(enclosure, popupContent) {
 function findEnclosureById(data, id) {
     for (const biomeKey in data) {
         const biome = data[biomeKey];
-        for (const enclosureKey in biome) {
-            const enclosure = biome[enclosureKey];
+        for (const enclosure of biome.enclosures) {
             if (enclosure.id_enclosure && enclosure.id_enclosure.toString() === id) {
                 return enclosure;
             }
@@ -282,10 +284,10 @@ async function setupSearch() {
 
         const filteredResults = [];
         Object.values(data).forEach(biome => {
-            Object.values(biome).forEach(enclosure => {
+            biome.enclosures.forEach(enclosure => {
                 if (enclosure.animals) {
                     enclosure.animals.forEach(animal => {
-                        if (animal.toLowerCase().includes(query.toLowerCase())) {
+                        if (animal.name.toLowerCase().includes(query.toLowerCase())) {
                             filteredResults.push({
                                 biome: biome,
                                 enclosure: enclosure,
@@ -310,13 +312,11 @@ async function setupSearch() {
             return;
         }
 
-
-        // ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
         results.forEach(result => {
             const resultItem = document.createElement('div');
             resultItem.classList.add('search-result');
             resultItem.innerHTML = `
-                <h3>${result.animal}</h3>
+                <h3>${result.animal.name}</h3>
                 <p>Biome : ${result.biome.biome_name}</p>
             `;
 
@@ -343,9 +343,6 @@ async function setupSearch() {
         filterAnimals(query);
     });
 }
-
-
-
 
 async function init() {
     await fetchAndDisplay();
