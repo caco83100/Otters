@@ -120,6 +120,7 @@ function displayPopup(enclosure, popupContent) {
     }
     popupContent.innerHTML = `
     <h2>Animaux présents dans cet enclos :</h2>
+    <br>
         <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">
             
@@ -155,8 +156,8 @@ function displayPopup(enclosure, popupContent) {
         <label>Heure de repas: ${enclosure.meal}</label>
         <br>
         <label>${travauxTxt}</label>
-        <br>
-        
+        <br><br>
+        <hr>
         <div class="comment-section">
             <h3>Laissez un commentaire :</h3>
             <br>
@@ -308,7 +309,7 @@ async function setupSearch() {
         searchResultsContainer.innerHTML = ''; // Vider les résultats précédents
 
         if (results.length === 0) {
-            searchResultsContainer.innerHTML = '<p>Aucun résultat trouvé.</p>';
+            searchResultsContainer.innerHTML = '<label>Aucun résultat trouvé.</label>';
             return;
         }
 
@@ -317,7 +318,7 @@ async function setupSearch() {
             resultItem.classList.add('search-result');
             resultItem.innerHTML = `
                 <h3>${result.animal.name}</h3>
-                <p>Biome : ${result.biome.biome_name}</p>
+                <label>Biome : ${result.biome.biome_name}</label><br>
             `;
 
             resultItem.addEventListener('click', () => {
