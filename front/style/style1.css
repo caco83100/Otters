@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-/*TITRE*/
+/*TITRES UTILISES*/
 
 h1 {
     text-align: center;
@@ -67,12 +67,12 @@ h4{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Style de la vidéo en plein écran */
+/* Vidéo en plein écran */
 .full-width-video {
     width: 100%;
     height:auto;
     display: block;
-    filter: blur(3px); /* Ajoute un léger flou */
+    filter: blur(3px); /* léger flou */
 }
 
 .overlay {
@@ -81,8 +81,8 @@ h4{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Film noir léger (ajustez l'alpha pour plus ou moins d'obscurité) */
-    z-index: 1; /* Assure que le film est au-dessus de la vidéo */
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1; 
 }
 
 /* Style du titre en superposition */
@@ -94,7 +94,7 @@ h4{
     color: white;
     font-size: 3rem;
     text-align: center;
-    background-color: transparent; /* Fond semi-transparent */
+    background-color: transparent; 
     padding: 20px;
     border-radius: 10px;
     z-index: 1;
@@ -154,7 +154,6 @@ section {
   }
 
   @media (max-width: 768px) {
-    /* Réduire les tailles sur les écrans moyens */
     .img.dessus {
       width: 40%; /* Taille plus petite pour la deuxième image */
       left: -15%; /* Ajustement de position */
@@ -162,14 +161,13 @@ section {
   }
   
   @media (max-width: 480px) {
-    /* Réglages pour les petits écrans */
     .img.dessus {
       width: 50%; /* Encore plus petite pour s'adapter aux écrans mobiles */
-      left: -10%; /* Ajustement minime */
+      left: -10%; 
     }
   }
 
-/* Styles pour les images */
+/* STYLES IMAGES ACCUEIL */
 
 .image-container img {
     width: 100%;
@@ -184,6 +182,13 @@ section {
     text-align: center;
     color:white;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+/*LABEL */
+
+label{
+    color:white;
+    text-shadow: 2px 2px 3px black;
 }
 
 /* DISPOSITIONS D'IMAGES */
@@ -246,15 +251,15 @@ section {
 
 .nav a {
     display: flex;
-    align-items: center; /* Centrer verticalement les liens */
+    align-items: center; 
     justify-content: center; /* Centrer horizontalement les liens */
     color: rgb(0, 0, 0);
     text-align: center;
-    padding: 0 16px; /* Espacement horizontal des liens */
+    padding: 0 16px;
     text-decoration: none;
     font-size: clamp(14px, 2vw, 20px);
     font-family: 'Poppins', sans-serif;
-    height: 100%; /* Hauteur complète de la barre */
+    height: 100%; 
     transition: background-color 0.3s ease;
 }
 
@@ -268,37 +273,6 @@ section {
     height: 40px;
     width: auto;
 }
-
-/* CHAMP DE RECHERCHE */
-
-.search-container {
-    display: flex;
-    align-items: center; /* Centrer verticalement le champ de recherche */
-    justify-content: center;
-    flex-shrink: 0; /* Empêche la réduction du champ de recherche */
-    margin-left: 16px; /* Espace entre le champ de recherche et les autres éléments */
-}
-
-.nav input[type=text] {
-    padding: 6px;
-    border: none;
-    font-size: 17px;
-    width: 200px; /* Largeur fixe pour le champ de recherche */
-}
-
-@media (max-width: 768px) {
-    .search-container {
-        margin-left: 8px; /* Réduit l'espace sur les écrans plus petits */
-        justify-content: flex-start; /* Place le champ à gauche */
-        width: 100%; /* Adapte à la largeur de l'écran */
-    }
-
-    .nav input[type="text"] {
-        font-size: 15px; /* Réduit la taille du texte */
-        width: 100%; /* Utilise toute la largeur disponible */
-    }
-}
-
 
 /* BOUTON CONNEXION */
 
@@ -322,25 +296,25 @@ section {
 
 @media (max-width: 768px) {
     .btn {
-        padding: 12px 30px; /* Réduit le padding sur les écrans moyens */
-        font-size: 11px; /* Diminue légèrement la taille de la police */
-        border-radius: 20px; /* Adoucit les coins pour un meilleur rendu */
+        padding: 12px 30px; 
+        font-size: 11px; 
+        border-radius: 20px; 
     }
 }
 
 @media (max-width: 480px) {
     .btn {
-        padding: 10px 20px; /* Réduit encore le padding pour les petits écrans */
-        font-size: 10px; /* Taille de police plus petite */
-        width: 100%; /* Le bouton occupe toute la largeur */
-        max-width: 300px; /* Limite la largeur maximale */
+        padding: 10px 20px; 
+        font-size: 10px; 
+        width: 100%; 
+        max-width: 300px; 
         margin: 0 auto; /* Centre le bouton horizontalement */
         display: block; /* Gère les cas où le parent a une largeur limitée */
     }
 }
 
 
-/* LOGIN PAGE */
+/* TOUS LES DIVS WRAPPER UTILISES */
 
 *{
     margin:0;
@@ -473,52 +447,6 @@ section {
 
 .register-link p a:hover{
     text-decoration:underline;
-}
-
-/* FOOTER */
-
-footer {
-    position: relative;
-    margin-top: 30px;
-    bottom: 0;
-    left: 0;
-    background-color: #43bb17;
-    color: rgb(0, 0, 0);
-    padding: 20px 0;
-    text-align: center;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    opacity:0.9;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content p {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.social-links {
-    margin-top: 10px;
-}
-
-.social-links a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.social-links a:hover {
-    color: #007812;
-}
-
-.social-links img {
-    height: 25px;
-    width: auto;
 }
 
 #result {
@@ -787,7 +715,7 @@ footer {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* NOS ENCLOS : RECHERCHE */
+/* NOS ENCLOS : RECHERCHE ET TYPES DE BOUTONS UTILISES */
 
 #submit-btn {
     background-color: #643500;
@@ -816,11 +744,6 @@ footer {
     display: flex;
     gap: 10px;
     align-items: center;
-}
-
-label{
-    color:white;
-    text-shadow: 2px 2px 3px black;
 }
 
 .comment-display {
@@ -870,16 +793,16 @@ label{
     margin-bottom: 15px; 
     display: flex;
     align-items: center;
-  }
+}
   
   /* Étiquette de texte et champ de quantité alignés */
-  #ticketForm label {
+#ticketForm label {
     flex: 1;
     font-weight: bold;
-  }
+}
   
   /* Champ de quantité avec bords arrondis */
-  input[type="number"] {
+input[type="number"] {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 5px;
@@ -888,14 +811,14 @@ label{
     min-width: 50px;
     transition: width 0.2s ease-in-out;
     margin-left: 10px;
-  }
+}
   
   /* Style lors du survol */
-  input[type="number"]:hover {
+input[type="number"]:hover {
     border-color: #666;
-  }
+}
   
-  .btnB {
+.btnB {
     border-radius: 15px;
     padding: 10px 20px;
     border: none;
@@ -907,23 +830,21 @@ label{
     margin-top: 2%;
     margin-bottom: 2%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
+}
   
-  .btnB:hover {
+.btnB:hover {
     background-color: #007812;
-  }
+}
   
-  #error-message {
+#error-message {
     color: red;
     margin-top: 10px;
     display: none;
-  }
+}
+
+  /* PAGE NOS SERVICES */
   
-  
-  
-  /* NOS SERVICES */
-  
-  .wrappedS {
+.wrappedS {
     display: flex !important;
     align-items: center !important;
     flex-direction: column !important;
@@ -941,14 +862,15 @@ label{
     margin-bottom: 30px;
     margin-top: 30px;
     box-sizing: border-box;
-  }
+}
   
   
-  .containerS {
+.containerS {
     display: grid !important;
     grid-template-columns: 2fr 1fr !important;
     gap: 20px;
 }
+
 .left {
     min-width: 200px;
     max-width: 800px;
@@ -958,7 +880,7 @@ label{
     max-width: 900px;
 }
   
-  .boxS {
+.boxS {
     background-color: #efffef;
     padding: 1.5rem;
     margin-bottom: 15px;  /* Espacement entre les boxes */
@@ -966,14 +888,14 @@ label{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.2s ease;
-  }
+}
   
-  .boxS:hover {
+.boxS:hover {
     transform: scale(1.05);
-  }
+}
   
   
-  .box-headerS {
+.box-headerS {
     font-size: 1.2rem;
     font-weight: bold;
     color: #2b2e83;
@@ -983,66 +905,35 @@ label{
     justify-content: center;
     gap: 0.5rem;
     text-align: center;
-  }
+}
   
   
-  .highlightS {
+.highlightS {
     color: #36b736;
     font-weight: bold;
-  }
-  
-  /* sections */
-  .map img {
-    width: 110%;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .imap-container {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
 }
-
-.imap-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-  .info a {
-    color: #36b736;
-    text-decoration: none;
-    margin-top: 1rem;
-    display: inline-block;
-    font-weight: bold;
-  }
   
-  .centered {
-    text-align: center;
-  }
-  
-  
-  .boxS p {
-    color: #000;
-  }
-  
-  .icon {
-    width: 30px;
-    height: 30px;
-  }
   
   /* PRESENTATION BIOMES*/
   
-  .grid-list {
+.grid-list {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 1rem;
     padding: 2rem;
-  }
+}
+
+.search-bar{
+    width: 400px; 
+    height: 50px;
+    font-size: 16px; 
+    padding: 5px; 
+    border-radius: 15px;
+}
   
-  /* POP UP */
-  .popup {
+/* POP UP */
+
+.popup {
     display: none;
     position: fixed;
     top: 0;
@@ -1053,9 +944,9 @@ label{
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
+}
   
-  .popup-content {
+.popup-content {
     background: rgb(69, 162, 60);
     opacity: 95%;
     padding: 30px;
@@ -1066,33 +957,33 @@ label{
     max-height: 80%;
     overflow-y: auto;
     position: relative;
-  }
+}
   
-  .close-btn {
+.close-btn {
     position: absolute;
     top: 10px;
     right: 20px;
     cursor: pointer;
     font-size: 24px;
     color: #333;
-  }
+}
   
-  #popup img {
+#popup img {
     max-width: 100%;
     max-height: 300px;
     height: auto;
     display: block;
     margin: 0 auto 20px;
-  }
+}
   
-  #username{
+#username{
     padding: 5px; 
     border-radius: 15px;
-  }
+}
 
-  /* map interactive */
+/* MAP INTERACTIVE */
   
-  .center-map {
+.center-map {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1112,25 +1003,27 @@ label{
     margin: 0;
     position: relative;
 }
-  circle {
+  
+circle {
       fill: lawngreen;
       fill-opacity: 0;
       stroke: lawngreen;
       stroke-width: 0px;
-  }
+}
   
-  circle:hover {
+circle:hover {
       stroke-opacity: 1;
       fill-opacity: 0.2;
       stroke-width: 2;
-  }
+}
   
-  circle.selected {
+circle.selected {
       stroke-opacity: 1;
       fill-opacity: 0.5;
       stroke-width: 2;
-  }
-  .map-btn {
+}
+  
+.map-btn {
     border-radius: 15px;
     background-color: #43bb17; /* Couleur de fond */
     color: white; /* Couleur du texte */
@@ -1146,11 +1039,90 @@ label{
     background-color: #007812; /* Couleur au survol */
     transform: scale(1.1); /* Légère augmentation de taille */
 }
+
+/* IMAGES MAP */
   
-.search-bar{
-    width: 400px; 
-    height: 50px;
-    font-size: 16px; 
-    padding: 5px; 
-    border-radius: 15px;
-}     
+.map img {
+    width: 110%;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+  .imap-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.imap-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info a {
+    color: #36b736;
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+    font-weight: bold;
+}
+  
+.centered {
+    text-align: center;
+}
+
+.boxS p {
+    color: #000;
+}
+  
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* FOOTER */
+
+footer {
+    position: relative;
+    margin-top: 30px;
+    bottom: 0;
+    left: 0;
+    background-color: #43bb17;
+    color: rgb(0, 0, 0);
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    opacity:0.9;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.social-links a:hover {
+    color: #007812;
+}
+
+.social-links img {
+    height: 25px;
+    width: auto;
+}
