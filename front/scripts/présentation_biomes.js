@@ -190,7 +190,7 @@ function displayPopup(enclosure, popupContent) {
                 ${comments.length > 0 ? comments.map(comment => `
                     <div class="comment-box">
                         <h4>${comment.username} - ${comment.rating} étoiles</h4>
-                        <label>${comment.text}</label>
+                        <p>${comment.text}</p>
                     </div>`).join('') 
                 : ''}
             </div>
@@ -295,7 +295,7 @@ async function loadComments(enclosureId) {
 
             commentElement.innerHTML = `
                 <h4>${comment.pseudo} - ${comment.note} étoiles</h4>
-                <p>${comment.commentaire}</p>
+                <p style="text-align: left; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">${comment.commentaire}</p>
             `;
 
             commentDisplay.appendChild(commentElement);

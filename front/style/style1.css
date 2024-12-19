@@ -747,7 +747,7 @@ footer {
 /* COMMENTAIRES */
 
 .comment-form .comment-box {
-    background-color: #fff;  /* Fond blanc solide */
+    background-color: #ffffff;  /* Fond blanc solide */
     padding: 15px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
@@ -825,6 +825,7 @@ label{
 
 .comment-display {
     margin-top: 20px;
+    border: 1px solid white;
 }  
 
 #searchResults{
