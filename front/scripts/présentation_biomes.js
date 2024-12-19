@@ -118,10 +118,13 @@ function displayPopup(enclosure, popupContent) {
     if (enclosure.travaux == 1) {
         travauxTxt = 'Enclos en travaux';
     }
+
+    // Définir comments avant d'utiliser le template HTML
+    const comments = enclosure.comments || [];
+
     popupContent.innerHTML = `
     <h2>Animaux présents dans cet enclos :</h2>
     <br>
-        <!-- Lignes HTML insérées ici -->
         <div class="enclos-container">
             
             <!-- Swiper container principal -->
@@ -159,6 +162,7 @@ function displayPopup(enclosure, popupContent) {
         <br><br>
         <hr>
         <div class="comment-section">
+        <br>
             <h3>Laissez un commentaire :</h3>
             <br>
             <form id="commentForm" class="comment-form">
@@ -179,9 +183,20 @@ function displayPopup(enclosure, popupContent) {
 
                 <button type="button" class="submit-btn">Soumettre</button>
             </form>
+
+            <div class="existing-comments">
+            <br>
+                <h3>Commentaires :</h3>
+                ${comments.length > 0 ? comments.map(comment => `
+                    <div class="comment-box">
+                        <h4>${comment.username} - ${comment.rating} étoiles</h4>
+                        <p>${comment.text}</p>
+                    </div>`).join('') 
+                : ''}
+            </div>
+
             <div id="commentDisplay"></div>
         </div>
-        <script src="commentaire.js"></script>
     `;
 
     // Script étoiles
@@ -229,8 +244,10 @@ function displayPopup(enclosure, popupContent) {
             commentElement.classList.add("user-comment");
 
             commentElement.innerHTML = `
-                <h4>${username} - ${rating} étoiles</h4>
-                <p>${comment}</p>
+                <div class="comment-box">
+                    <h4>${username} - ${rating} étoiles</h4>
+                    <p>${comment}</p>
+                </div>
             `;
 
             commentDisplay.appendChild(commentElement);
