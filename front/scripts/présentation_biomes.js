@@ -190,7 +190,7 @@ function displayPopup(enclosure, popupContent) {
                 ${comments.length > 0 ? comments.map(comment => `
                     <div class="comment-box">
                         <h4>${comment.username} - ${comment.rating} étoiles</h4>
-                        <p>${comment.text}</p>
+                        <label>${comment.text}</label>
                     </div>`).join('') 
                 : ''}
             </div>
