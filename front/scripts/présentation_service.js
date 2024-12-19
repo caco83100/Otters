@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const popupText = document.getElementById("popup-text");
         const popupImage = document.getElementById("popup-image");
 
-        let serviceDetails = `<h4>${type}</h4>`; // Ajouter le titre du type de service
+        let serviceDetails = `<h3>${type}</h3><br>`; // Ajouter le titre du type de service
 
         // Itérer sur chaque service du groupe
         for (const [serviceName, biomes] of Object.entries(serviceGroup)) {
