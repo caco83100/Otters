@@ -163,11 +163,25 @@ function displayPopup(enclosure, popupContent) {
                 <label for="comment">Votre commentaire :</label><br>
                 <textarea id="comment" class="comment-box" rows="4" placeholder="Écrivez votre commentaire ici..." required></textarea><br><br>
 
-                <button type="button" class="submit-btn" onclick="addComment()">Soumettre</button>
+                <button type="button" class="submit-btn">Soumettre</button>
             </form>
             <div id="commentDisplay"></div>
         </div>
+        <script src="commentaire.js"></script>
     `;
+
+    //Script étoiles
+
+    let selectedStars = 0;
+    document.querySelectorAll('.star').forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedStars = parseInt(star.getAttribute('data-value'), 10);
+            document.querySelectorAll('.star').forEach((s) => s.classList.remove('selected'));
+            for (let i = 0; i < selectedStars; i++) {
+                document.querySelectorAll('.star')[i].classList.add('selected');
+            }
+        });
+    });
     //Script pour initialiser Swiper
 
     const swiper = new Swiper('.mySwiper', {
