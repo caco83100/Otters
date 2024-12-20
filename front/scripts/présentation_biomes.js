@@ -286,7 +286,7 @@ async function loadComments(enclosureId) {
         const data = await response.json();
 
         if (data.success) {
-
+            document.getElementById("commentDisplay").innerHTML='';
             data.comments.forEach(comment => {
                 console.log(comment);
 
