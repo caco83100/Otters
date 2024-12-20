@@ -1008,6 +1008,12 @@ input[type="number"]:hover {
     margin: 0;
     position: relative;
 }
+
+.map h3{
+    margin-top:90px;
+    margin-bottom: -110px;
+    text-align: center;
+}
   
 circle {
       fill: lawngreen;
