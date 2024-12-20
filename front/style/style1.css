@@ -1010,9 +1010,10 @@ input[type="number"]:hover {
 }
 
 .map h3{
-    margin-top:90px;
+    margin-top:35px;
     margin-bottom: -110px;
     text-align: center;
+    z-index:2000;
 }
   
 circle {
