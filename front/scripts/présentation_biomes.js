@@ -286,7 +286,7 @@ async function loadComments(enclosureId) {
         const data = await response.json();
 
         if (data.success) {
-
+            document.getElementById("commentDisplay").innerHTML='';
             data.comments.forEach(comment => {
                 console.log(comment);
 
@@ -297,7 +297,7 @@ async function loadComments(enclosureId) {
 
             commentElement.innerHTML = `
                 <h4>${comment.pseudo} - ${comment.note} étoiles</h4>
-                <p style="text-align: left; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">${comment.commentaire}</p>
+                <p>${comment.commentaire}</p>
             `;
 
             commentDisplay.appendChild(commentElement);
